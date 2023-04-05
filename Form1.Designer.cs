@@ -1,4 +1,6 @@
-﻿namespace Box
+﻿using System;
+
+namespace Box
 {
     partial class frmAccueil
     {
