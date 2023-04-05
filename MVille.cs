@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Box
 {
-    public class Ville
+    public class MVille
     {
+
         private int idVille;
         public int IdVille
         {
@@ -32,6 +33,12 @@ namespace Box
             get { return garages; }
             set { garages = value; }
 
+        }
+
+        public MVille(string Cp, string NomVille)
+        {
+            this.cp = Cp;
+            this.nomVille = NomVille;
         }
     }
 }

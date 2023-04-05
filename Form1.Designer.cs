@@ -71,6 +71,7 @@
             this.btn_ville.TabIndex = 3;
             this.btn_ville.Text = "VILLE";
             this.btn_ville.UseVisualStyleBackColor = true;
+            this.btn_ville.Click += new System.EventHandler(this.btn_ville_Click);
             // 
             // btn_quitter
             // 
