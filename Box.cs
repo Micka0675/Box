@@ -34,8 +34,8 @@ namespace Box
             get { return charges; }
             set { charges = value; }
         }
-        private Garage garage;
-        public Garage Garage
+        private MGarage garage;
+        public MGarage Garage
         {
             get { return garage; }
             set { garage = value; }

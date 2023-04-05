@@ -53,6 +53,7 @@
             this.btn_garage.TabIndex = 1;
             this.btn_garage.Text = "GARAGE";
             this.btn_garage.UseVisualStyleBackColor = true;
+            this.btn_garage.Click += new System.EventHandler(this.btn_garage_Click);
             // 
             // btn_box
             // 

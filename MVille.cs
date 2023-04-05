@@ -27,8 +27,8 @@ namespace Box
             get { return cp; }
             set { cp = value; }
         }
-        private List<Garage> garages = new List<Garage>();
-        public List<Garage> Garages
+        private List<MGarage> garages = new List<MGarage>();
+        public List<MGarage> Garages
         {
             get { return garages; }
             set { garages = value; }

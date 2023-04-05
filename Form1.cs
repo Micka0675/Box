@@ -33,5 +33,11 @@ namespace Box
            FrmVille frmAffiche = new FrmVille();
             frmAffiche.ShowDialog();
         }
+
+        private void btn_garage_Click(object sender, EventArgs e)
+        {
+            frmGarage frmGarage = new frmGarage();
+            frmGarage.ShowDialog();
+        }
     }
 }

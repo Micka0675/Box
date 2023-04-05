@@ -53,13 +53,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGarage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGarage.Designer.cs">
+      <DependentUpon>frmGarage.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmVille.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmVille.Designer.cs">
       <DependentUpon>FrmVille.cs</DependentUpon>
     </Compile>
-    <Compile Include="Garage.cs" />
+    <Compile Include="MGarage.cs" />
     <Compile Include="FrmLocataire.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     <Compile Include="MVille.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGarage.resx">
+      <DependentUpon>frmGarage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVille.resx">
       <DependentUpon>FrmVille.cs</DependentUpon>
