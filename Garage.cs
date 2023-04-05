@@ -26,8 +26,8 @@ namespace Box
             get { return adresse; }
             set { adresse = value; }
         }
-        private Ville ville;
-        public Ville Ville
+        private MVille ville;
+        public MVille Ville
         {
             get { return ville; }
             set { ville = value; }

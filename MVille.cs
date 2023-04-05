@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Box
 {
-    public class Ville
+    public class MVille
     {
+
         private int idVille;
         public int IdVille
         {
@@ -32,6 +33,17 @@ namespace Box
             get { return garages; }
             set { garages = value; }
 
+        }
+
+        public List<MLocataire> lesLocataires = new List<MLocataire>()
+        {
+        new MLocataire("Dupont", "Jean"),
+        new MLocataire("Martin", "Marie")
+        };
+        public MVille(string NomVille)
+        {
+     
+            this.nomVille = NomVille;
         }
     }
 }

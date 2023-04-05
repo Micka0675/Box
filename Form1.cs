@@ -27,5 +27,11 @@ namespace Box
         {
             this.Close();
         }
+
+        private void btn_ville_Click(object sender, EventArgs e)
+        {
+           FrmVille frmAffiche = new FrmVille();
+            frmAffiche.ShowDialog();
+        }
     }
 }

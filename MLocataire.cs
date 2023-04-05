@@ -12,7 +12,7 @@ namespace Box
         private string nomLoc;
         private string prenLoc;
         private string adresse;
-        private Ville ville;
+        private MVille ville;
 
         public int IdLoc
         {
@@ -34,7 +34,7 @@ namespace Box
             get { return adresse; }
             set { adresse = value; }
         }
-        public Ville Ville
+        public MVille Ville
         {
             get { return ville; }
             set { ville = value; }
