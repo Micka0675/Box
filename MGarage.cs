@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Box
 {
-    public class Garage
+    public class MGarage
     {
         private string numGarage;
         /// <summary>
@@ -34,6 +34,12 @@ namespace Box
         {
             get { return ville; }
             set { ville = value; }
+        }
+        public MGarage(string consNumGarage, string consAdresse, MVille consVille)
+        { 
+            this.numGarage= consNumGarage;
+            this.adresse= consAdresse;
+            this.ville= consVille;
         }
     }
 }
