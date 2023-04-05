@@ -9,6 +9,9 @@ namespace Box
     public class MGarage
     {
         private string numGarage;
+        /// <summary>
+        /// bessem
+        /// </summary>
         public string NumGarage
         {
             get { return numGarage; }
