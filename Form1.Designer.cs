@@ -62,6 +62,7 @@
             this.btn_box.TabIndex = 2;
             this.btn_box.Text = "BOX";
             this.btn_box.UseVisualStyleBackColor = true;
+            this.btn_box.Click += new System.EventHandler(this.btn_box_Click);
             // 
             // btn_ville
             // 
