@@ -35,14 +35,9 @@ namespace Box
 
         }
 
-        public List<MLocataire> lesLocataires = new List<MLocataire>()
+        public MVille(string Cp, string NomVille)
         {
-        new MLocataire("Dupont", "Jean"),
-        new MLocataire("Martin", "Marie")
-        };
-        public MVille(string NomVille)
-        {
-     
+            this.cp = Cp;
             this.nomVille = NomVille;
         }
     }
