@@ -51,5 +51,6 @@ namespace Box
             this.nomLoc = consPrenLoc;
             this.adresse = adresse;
         }
+
     }
 }

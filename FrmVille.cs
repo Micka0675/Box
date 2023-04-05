@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -14,8 +15,8 @@ namespace Box
     {
         public List<MVille> lesVilles = new List<MVille>()
         {
-        new MVille("Nice"),
-        new MVille("Lyon")
+        new MVille("06000", "Nice"),
+        new MVille("69000", "Lyon")
         };
 
 
@@ -24,13 +25,17 @@ namespace Box
             InitializeComponent();
             // Créer une DataTable pour stocker les données des locataires
             DataTable dtVille  = new DataTable();
+            dtVille.Columns.Add("CP", typeof(string));
             dtVille.Columns.Add("Nom", typeof(string));
 
             // Remplir la DataTable avec les données des locataires
             foreach (MVille ville in lesVilles)
             {
                 DataRow row = dtVille.NewRow();
-                row["Nom"] = ville.NameVille;
+                row[0] = ville.Cp;
+                // affecter l'autre colonne 
+                row[1] = ville.NameVille;
+                // ajouter la ligne à la datatable
                 dtVille.Rows.Add(row);
             }
 
