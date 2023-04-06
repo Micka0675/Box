@@ -10,7 +10,7 @@ namespace Box
     {
         private string numGarage;
         /// <summary>
-        /// bessem
+        /// trouduk
         /// </summary>
         public string NumGarage
         {
