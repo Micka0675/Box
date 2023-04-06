@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -38,8 +39,8 @@ namespace Box
 
             //Assignation d'une valeur de départ à la propriété Text de l'élément TextBox afin de l'afficher
             textboxVilles.Text = "Top 3 des villes de fachos:" + Environment.NewLine + Environment.NewLine;
-            
 
+            dtVille.Clear();
             // Remplir la DataTable et le TextBox avec les données des villes
             foreach (MVille ville in lesVilles)
             {
@@ -58,6 +59,20 @@ namespace Box
             dataGridView1.DataSource = dtVille;
 
             
+        }
+        public void AjouterVille(MVille ville)
+        {
+            if (!lesVilles.Contains(ville))
+            {
+                lesVilles.Add(ville);
+            }
+        }
+
+        private void btnAjouter_Click(object sender, EventArgs e)
+        {
+            
+            FrmAjoutVille ajouterVille = new FrmAjoutVille(this);
+            ajouterVille.ShowDialog();
         }
         private void Quitter_Click(object sender, EventArgs e)
         {

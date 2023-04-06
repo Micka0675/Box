@@ -40,5 +40,6 @@ namespace Box
             this.cp = Cp;
             this.nomVille = NomVille;
         }
+
     }
 }
