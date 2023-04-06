@@ -32,6 +32,7 @@
             this.Quitter = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textboxVilles = new System.Windows.Forms.TextBox();
+            this.chkedListBoxFaf = new System.Windows.Forms.CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,17 +64,26 @@
             // 
             // textboxVilles
             // 
-            this.textboxVilles.Location = new System.Drawing.Point(57, 102);
+            this.textboxVilles.Location = new System.Drawing.Point(57, 107);
             this.textboxVilles.Multiline = true;
             this.textboxVilles.Name = "textboxVilles";
-            this.textboxVilles.Size = new System.Drawing.Size(100, 76);
+            this.textboxVilles.Size = new System.Drawing.Size(146, 98);
             this.textboxVilles.TabIndex = 3;
+            // 
+            // chkedListBoxFaf
+            // 
+            this.chkedListBoxFaf.FormattingEnabled = true;
+            this.chkedListBoxFaf.Location = new System.Drawing.Point(67, 243);
+            this.chkedListBoxFaf.Name = "chkedListBoxFaf";
+            this.chkedListBoxFaf.Size = new System.Drawing.Size(120, 94);
+            this.chkedListBoxFaf.TabIndex = 4;
             // 
             // FrmVille
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.chkedListBoxFaf);
             this.Controls.Add(this.textboxVilles);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.Quitter);
@@ -92,5 +102,6 @@
         private System.Windows.Forms.Button Quitter;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textboxVilles;
+        private System.Windows.Forms.CheckedListBox chkedListBoxFaf;
     }
 }
