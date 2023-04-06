@@ -43,6 +43,8 @@ namespace Box
             dataGridView1.DataSource = dtVille;
 
         }
+
+
         /// <summary>
         /// Créer par erreur en cliquant dans une cellule, à supprimer proprement
         /// </summary>
@@ -52,5 +54,11 @@ namespace Box
         {
 
         }
+
+        private void Quitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }
