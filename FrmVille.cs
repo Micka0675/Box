@@ -37,13 +37,20 @@ namespace Box
                 row[1] = ville.NameVille;
                 // ajouter la ligne à la datatable
                 dtVille.Rows.Add(row);
+
+                //Ajoute chaque élément au contenu du TextBox en utilisant l'opérateur "+=" pour concaténer les éléments ensemble. 'Environment.NewLine' permet un retour à la ligne
+                textboxVilles.Text += ville.NameVille + Environment.NewLine;
             }
 
             // Lier le DataGridView à la DataTable
             dataGridView1.DataSource = dtVille;
 
+            
         }
-
+        private void Quitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         /// <summary>
         /// Créer par erreur en cliquant dans une cellule, à supprimer proprement
@@ -54,11 +61,5 @@ namespace Box
         {
 
         }
-
-        private void Quitter_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
     }
 }
