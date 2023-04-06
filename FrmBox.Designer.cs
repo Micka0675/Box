@@ -47,9 +47,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1467, 831);
             this.Controls.Add(this.Quitter);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmBox";
             this.Text = "frmBox";
+            this.Load += new System.EventHandler(this.frmBox_Load);
             this.ResumeLayout(false);
 
         }
