@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.Quitter = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Quitter
@@ -41,22 +42,33 @@
             this.Quitter.UseVisualStyleBackColor = true;
             this.Quitter.Click += new System.EventHandler(this.Quitter_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(456, 189);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(489, 203);
+            this.textBox1.TabIndex = 1;
+            // 
             // frmBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1467, 831);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Quitter);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmBox";
             this.Text = "frmBox";
             this.Load += new System.EventHandler(this.frmBox_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button Quitter;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
