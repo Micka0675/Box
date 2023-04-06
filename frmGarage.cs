@@ -12,9 +12,39 @@ namespace Box
 {
     public partial class frmGarage : Form
     {
+        public List<MGarage> Dgarages = new List<MGarage>()
+        {
+           new MGarage("1","Impasse du Git"),
+           new MGarage("78", "Rue des chaussettes"),
+           new MGarage("45", "Allée là")
+        };
         public frmGarage()
         {
             InitializeComponent();
+
+            DataTable dtGarage = new DataTable();
+            dtGarage.Columns.Add("N°Garage", typeof(string));
+            dtGarage.Columns.Add("Adresse", typeof(string));
+
+            foreach (MGarage garage in Dgarages)
+            {
+                DataRow row = dtGarage.NewRow();
+                row[0] = garage.NumGarage;
+                row[1] = garage.Adresse;
+                dtGarage.Rows.Add(row);
+            }
+
+            dataGridView1.DataSource = dtGarage;
+        }
+
+        private void frmGarage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
