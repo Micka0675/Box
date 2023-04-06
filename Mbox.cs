@@ -8,9 +8,6 @@ namespace Box
 {
     internal class Mbox
     {
-
-   
-
         /// <summary>
         /// Mbox Attributes by Micka
         /// </summary>
