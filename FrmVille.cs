@@ -16,8 +16,16 @@ namespace Box
         public List<MVille> lesVilles = new List<MVille>()
         {
             new MVille("06000", "Nice"),
-            new MVille("69000", "Lyon")
+            new MVille("69000", "Lyon"),
+            new MVille("78000", "Versailles")
         };
+
+        //public List<string> fafAchieviements = new List<string>()
+        //{
+        //    "statue commémorant l’Algérie Française, à la mémoire de Roger Degueldre",
+        //    "inauguration d'une Boutique Nationaliste par Alexandre Gabriac (exclu du FN pour un salut nazi)"
+
+        //};
 
 
         public FrmVille()
@@ -28,7 +36,11 @@ namespace Box
             dtVille.Columns.Add("CP", typeof(string));
             dtVille.Columns.Add("Nom", typeof(string));
 
-            // Remplir la DataTable avec les données des villes
+            //Assignation d'une valeur de départ à la propriété Text de l'élément TextBox afin de l'afficher
+            textboxVilles.Text = "Top 3 des villes de fachos:" + Environment.NewLine + Environment.NewLine;
+            
+
+            // Remplir la DataTable et le TextBox avec les données des villes
             foreach (MVille ville in lesVilles)
             {
                 DataRow row = dtVille.NewRow();
@@ -38,8 +50,8 @@ namespace Box
                 // ajouter la ligne à la datatable
                 dtVille.Rows.Add(row);
 
-                //Ajoute chaque élément au contenu du TextBox en utilisant l'opérateur "+=" pour concaténer les éléments ensemble. 'Environment.NewLine' permet un retour à la ligne
-                textboxVilles.Text += ville.NameVille + Environment.NewLine;
+                //Ajoute chaque élément au contenu du TextBox en utilisant l'opérateur "+=" pour concaténer les éléments. 'Environment.NewLine' permet un retour à la ligne.
+                textboxVilles.Text += "-" + ville.NameVille + Environment.NewLine;
             }
 
             // Lier le DataGridView à la DataTable
