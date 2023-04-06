@@ -35,11 +35,10 @@ namespace Box
             get { return ville; }
             set { ville = value; }
         }
-        public MGarage(string consNumGarage, string consAdresse, MVille consVille)
+        public MGarage(string consNumGarage, string consAdresse)
         { 
             this.numGarage= consNumGarage;
             this.adresse= consAdresse;
-            this.ville= consVille;
         }
     }
 }
