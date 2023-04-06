@@ -12,19 +12,21 @@ namespace Box
 {
     public partial class FrmAjoutVille : Form
     {
-        private FrmVille ajoutMain;
+       
         public FrmAjoutVille(FrmVille AjoutMain)
         {
-            InitializeComponent();
-            this.ajoutMain= AjoutMain;
-       
+            InitializeComponent();   
         }
 
         private void btnValider_Click(object sender, EventArgs e)
         {
-            MVille nouvVille = new MVille(textBoxAjoutCp.Text, textBoxAjoutV.Text);      
-            ajoutMain.AjouterVille(nouvVille);
-            textBoxRead.Text = "Nom :" + textBoxAjoutV.Text + Environment.NewLine + "CP : " + textBoxAjoutCp.Text;
+            MVille nouvVille = new MVille(textBoxAjoutCp.Text, textBoxAjoutV.Text);
+
+            FrmVille ajoutAffichage = new FrmVille();
+            ajoutAffichage.AjouterVille(nouvVille);
+            ajoutAffichage.MajdtVille();
+            ajoutAffichage.ShowDialog();
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

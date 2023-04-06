@@ -14,32 +14,34 @@ namespace Box
 {
     public partial class FrmVille : Form
     {
-        public List<MVille> lesVilles = new List<MVille>()
-        {
-            new MVille("06000", "Nice"),
-            new MVille("69000", "Lyon"),
-            new MVille("78000", "Versailles")
-        };
-
-        //public List<string> fafAchieviements = new List<string>()
-        //{
-        //    "statue commémorant l’Algérie Française, à la mémoire de Roger Degueldre",
-        //    "inauguration d'une Boutique Nationaliste par Alexandre Gabriac (exclu du FN pour un salut nazi)"
-
-        //};
+        private List<MVille> lesVilles = new List<MVille>();
+        DataTable dtVille = new DataTable();
 
 
         public FrmVille()
         {
             InitializeComponent();
+            lesVilles.Add(new MVille("06000", "Nice"));
+            lesVilles.Add(new MVille("69000", "Lyon"));
+            lesVilles.Add(new MVille("78000", "Versailles"));
+
             // Créer une DataTable pour stocker les données des villes
-            DataTable dtVille  = new DataTable();
+
             dtVille.Columns.Add("CP", typeof(string));
             dtVille.Columns.Add("Nom", typeof(string));
 
             //Assignation d'une valeur de départ à la propriété Text de l'élément TextBox afin de l'afficher
-            textboxVilles.Text = "Top 3 des villes de fachos:" + Environment.NewLine + Environment.NewLine;
+            textboxVilles.Text = "Les plus belles villes de fachos:" + Environment.NewLine + Environment.NewLine;
 
+            MajdtVille();
+
+        }
+
+        /// <summary>
+        /// Met à jour la dataGridView
+        /// </summary>
+        public void MajdtVille()
+        {
             dtVille.Clear();
             // Remplir la DataTable et le TextBox avec les données des villes
             foreach (MVille ville in lesVilles)
@@ -51,15 +53,15 @@ namespace Box
                 // ajouter la ligne à la datatable
                 dtVille.Rows.Add(row);
 
-                //Ajoute chaque élément au contenu du TextBox en utilisant l'opérateur "+=" pour concaténer les éléments. 'Environment.NewLine' permet un retour à la ligne.
-                textboxVilles.Text += "-" + ville.NameVille + Environment.NewLine;
+                if (!textboxVilles.Text.Contains(ville.NameVille))
+                {
+                    //Ajoute chaque élément au contenu du TextBox en utilisant l'opérateur "+=" pour concaténer les éléments. 'Environment.NewLine' permet un retour à la ligne.
+                    textboxVilles.Text += "-" + ville.NameVille + Environment.NewLine;
+                }      
             }
-
-            // Lier le DataGridView à la DataTable
-            dataGridView1.DataSource = dtVille;
-
-            
+            dataGridViewVille.DataSource = dtVille;
         }
+
         public void AjouterVille(MVille ville)
         {
             if (!lesVilles.Contains(ville))
@@ -68,25 +70,50 @@ namespace Box
             }
         }
 
-        private void btnAjouter_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Supprime unne ville de la liste lesVilles
+        /// </summary>
+        /// <param name="ville"></param>
+        public void SupprimerVille(MVille ville)
         {
-            
-            FrmAjoutVille ajouterVille = new FrmAjoutVille(this);
-            ajouterVille.ShowDialog();
-        }
-        private void Quitter_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            if (lesVilles.Contains(ville))
+            {
+                lesVilles.Remove(ville);
+            }
         }
 
         /// <summary>
-        /// Créer par erreur en cliquant dans une cellule, à supprimer proprement
+        /// Permet de créer un formulaire d'ajout pour la liste lesVilles
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnAjouter_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            FrmAjoutVille ajouterVille = new FrmAjoutVille(this);         
+            ajouterVille.ShowDialog();
         }
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewVille.SelectedRows.Count > 0)
+            {
+                DataGridViewRow ligneSelection = dataGridViewVille.SelectedRows[0];
+                MVille villeASuppr = ligneSelection.DataBoundItem as MVille;
+
+                // Supprimer la ligne sélectionnée
+                dataGridViewVille.Rows.Remove(ligneSelection);
+                lesVilles.Remove(villeASuppr);
+            }
+        }
+
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void Quitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }    
     }
 }
