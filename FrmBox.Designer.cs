@@ -28,13 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.Quitter = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // Quitter
+            // 
+            this.Quitter.Location = new System.Drawing.Point(1262, 675);
+            this.Quitter.Name = "Quitter";
+            this.Quitter.Size = new System.Drawing.Size(111, 46);
+            this.Quitter.TabIndex = 0;
+            this.Quitter.Text = "Quitter";
+            this.Quitter.UseVisualStyleBackColor = true;
+            this.Quitter.Click += new System.EventHandler(this.Quitter_Click);
             // 
             // frmBox
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1467, 831);
+            this.Controls.Add(this.Quitter);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "frmBox";
             this.Text = "frmBox";
             this.ResumeLayout(false);
@@ -42,5 +55,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button Quitter;
     }
 }
