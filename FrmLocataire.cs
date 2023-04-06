@@ -23,5 +23,10 @@ namespace Box
         {
 
         }
+
+        private void btn_quitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
