@@ -71,6 +71,7 @@
     <Compile Include="FrmVille.Designer.cs">
       <DependentUpon>FrmVille.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mbox.cs" />
     <Compile Include="MGarage.cs" />
     <Compile Include="FrmLocataire.cs">
       <SubType>Form</SubType>
