@@ -12,6 +12,9 @@ namespace Box
 {
     public partial class frmAccueil : Form
     {
+        /// <summary>
+        /// test
+        /// </summary>
         public frmAccueil()
         {
             InitializeComponent();
