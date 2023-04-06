@@ -31,6 +31,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_quitter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,11 +57,22 @@
             this.prenom.HeaderText = "PRENOM";
             this.prenom.Name = "prenom";
             // 
+            // btn_quitter
+            // 
+            this.btn_quitter.Location = new System.Drawing.Point(652, 265);
+            this.btn_quitter.Name = "btn_quitter";
+            this.btn_quitter.Size = new System.Drawing.Size(75, 23);
+            this.btn_quitter.TabIndex = 1;
+            this.btn_quitter.Text = "QUITTER";
+            this.btn_quitter.UseVisualStyleBackColor = true;
+            this.btn_quitter.Click += new System.EventHandler(this.btn_quitter_Click);
+            // 
             // frmLocataire
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_quitter);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmLocataire";
             this.Text = "Locataire";
@@ -74,5 +86,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nom;
         private System.Windows.Forms.DataGridViewTextBoxColumn prenom;
+        private System.Windows.Forms.Button btn_quitter;
     }
 }
