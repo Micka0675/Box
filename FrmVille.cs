@@ -15,20 +15,20 @@ namespace Box
     {
         public List<MVille> lesVilles = new List<MVille>()
         {
-        new MVille("06000", "Nice"),
-        new MVille("69000", "Lyon")
+            new MVille("06000", "Nice"),
+            new MVille("69000", "Lyon")
         };
 
 
         public FrmVille()
         {
             InitializeComponent();
-            // Créer une DataTable pour stocker les données des locataires
+            // Créer une DataTable pour stocker les données des villes
             DataTable dtVille  = new DataTable();
             dtVille.Columns.Add("CP", typeof(string));
             dtVille.Columns.Add("Nom", typeof(string));
 
-            // Remplir la DataTable avec les données des locataires
+            // Remplir la DataTable avec les données des villes
             foreach (MVille ville in lesVilles)
             {
                 DataRow row = dtVille.NewRow();
@@ -43,7 +43,11 @@ namespace Box
             dataGridView1.DataSource = dtVille;
 
         }
-
+        /// <summary>
+        /// Créer par erreur en cliquant dans une cellule, à supprimer proprement
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
