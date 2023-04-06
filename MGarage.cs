@@ -29,16 +29,23 @@ namespace Box
             get { return adresse; }
             set { adresse = value; }
         }
+        private int idGarage;
+        public int IdGarage
+        {
+            get { return idGarage; }
+            set { idGarage = value; }
+        }
         private MVille ville;
         public MVille Ville
         {
             get { return ville; }
             set { ville = value; }
         }
-        public MGarage(string consNumGarage, string consAdresse)
+        public MGarage(int consIdGarage,string consNumGarage, string consAdresse)
         { 
             this.numGarage= consNumGarage;
-            this.adresse= consAdresse;
+            this.adresse = consAdresse;
+            this.idGarage = consIdGarage;
         }
     }
 }
