@@ -8,12 +8,11 @@ namespace Box
 {
     public class MVille
     {
-
+        private static int compteur = 0;
         private int idVille;
-        public int IdVille
+        public int GetId()
         {
-            get { return idVille; }
-            set { idVille = value; }
+           return idVille;
         }
         private string nomVille;
         public string NameVille
@@ -35,10 +34,12 @@ namespace Box
 
         }
 
-        public MVille(string Cp, string NomVille)
+        public MVille(string NomVille, string Cp)
         {
-            this.cp = Cp;
-            this.nomVille = NomVille;
+            compteur++;
+            this.idVille = compteur;
+            nomVille = NomVille;
+            this.cp = Cp;          
         }
 
     }

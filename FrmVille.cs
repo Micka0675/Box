@@ -12,74 +12,38 @@ using System.Windows.Forms;
 
 namespace Box
 {
+    /// <summary>
+    /// Classe enfant de la classe native Form. Paramètre la composition du formulaire de gestion des villes et ses events
+    /// </summary>
     public partial class FrmVille : Form
     {
-        private List<MVille> lesVilles = new List<MVille>();
-        DataTable dtVille = new DataTable();
+       
+        private VilleDonnees villeDonnees;
 
-
+        /// <summary>
+        /// Constructeur pour le formulaire FrmVille
+        /// </summary>
         public FrmVille()
         {
             InitializeComponent();
-            lesVilles.Add(new MVille("06000", "Nice"));
-            lesVilles.Add(new MVille("69000", "Lyon"));
-            lesVilles.Add(new MVille("78000", "Versailles"));
 
-            // Créer une DataTable pour stocker les données des villes
-
-            dtVille.Columns.Add("CP", typeof(string));
-            dtVille.Columns.Add("Nom", typeof(string));
-
-            //Assignation d'une valeur de départ à la propriété Text de l'élément TextBox afin de l'afficher
-            textboxVilles.Text = "Les plus belles villes de fachos:" + Environment.NewLine + Environment.NewLine;
-
-            MajdtVille();
+            MVille uneVille = new MVille("Nice", "06000");
+            this.villeDonnees = new VilleDonnees();
+            this.villeDonnees.AjouterVille(uneVille);
+            this.afficheVilles();
 
         }
 
         /// <summary>
-        /// Met à jour la dataGridView
+        /// Méthode mettant à jour la dataGridView
         /// </summary>
-        public void MajdtVille()
+        public void afficheVilles()
         {
-            dtVille.Clear();
-            // Remplir la DataTable et le TextBox avec les données des villes
-            foreach (MVille ville in lesVilles)
-            {
-                DataRow row = dtVille.NewRow();
-                row[0] = ville.Cp;
-                // affecter l'autre colonne 
-                row[1] = ville.NameVille;
-                // ajouter la ligne à la datatable
-                dtVille.Rows.Add(row);
+            this.dataGridViewVille.DataSource = villeDonnees.ListerVille();
+            this.dataGridViewVille.Refresh();
 
-                if (!textboxVilles.Text.Contains(ville.NameVille))
-                {
-                    //Ajoute chaque élément au contenu du TextBox en utilisant l'opérateur "+=" pour concaténer les éléments. 'Environment.NewLine' permet un retour à la ligne.
-                    textboxVilles.Text += "-" + ville.NameVille + Environment.NewLine;
-                }      
-            }
-            dataGridViewVille.DataSource = dtVille;
-        }
+            this.btnSupprimer.Enabled = (this.dataGridViewVille.CurrentRow == null ? false : true);
 
-        public void AjouterVille(MVille ville)
-        {
-            if (!lesVilles.Contains(ville))
-            {
-                lesVilles.Add(ville);
-            }
-        }
-
-        /// <summary>
-        /// Supprime unne ville de la liste lesVilles
-        /// </summary>
-        /// <param name="ville"></param>
-        public void SupprimerVille(MVille ville)
-        {
-            if (lesVilles.Contains(ville))
-            {
-                lesVilles.Remove(ville);
-            }
         }
 
         /// <summary>
@@ -89,26 +53,54 @@ namespace Box
         /// <param name="e"></param>
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FrmAjoutVille ajouterVille = new FrmAjoutVille(this);         
-            ajouterVille.ShowDialog();
-        }
-        private void btnSupprimer_Click(object sender, EventArgs e)
-        {
-            if (dataGridViewVille.SelectedRows.Count > 0)
+            FrmAjoutVille ajouterVille = new FrmAjoutVille(this.villeDonnees);
+            if (ajouterVille.ShowDialog() == DialogResult.OK)
             {
-                DataGridViewRow ligneSelection = dataGridViewVille.SelectedRows[0];
-                MVille villeASuppr = ligneSelection.DataBoundItem as MVille;
-
-                // Supprimer la ligne sélectionnée
-                dataGridViewVille.Rows.Remove(ligneSelection);
-                lesVilles.Remove(villeASuppr);
+                // régénère l'affichage du dataGridView 
+                afficheVilles();
             }
         }
 
+        /// <summary>
+        /// Supprime l'entrée dans la liste lesVilles correspondant à la ligne sélectionnée et regénère l'affichage de la dataGridView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSupprimer_Click(object sender, EventArgs e)
+        {
+            if (this.dataGridViewVille.CurrentRow != null)
+            {
+                string nom;
+                int cle; 
+                cle = (int)this.dataGridViewVille.CurrentRow.Cells[0].Value;
+                nom = (string)this.dataGridViewVille.CurrentRow.Cells[1].Value;
+                // demander confirmation de la suppression
+                // NB: messagebox retourne une valeur exploitable !
+                if (MessageBox.Show("Voulez-vous supprimer la ville : " + nom.ToString(), "Suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    this.villeDonnees.SupprimerVille(cle);
+                    // réaffiche la datagridview
+                    afficheVilles();
+                }
+            }
+        }
+
+        /// <summary>
+        ///  Modifie l'entrée dans la liste lesVilles correspondant à la ligne sélectionnée et regénère l'affichage de la dataGridView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModifier_Click(object sender, EventArgs e)
         {
-          
+            MVille laVille;
+            int laCle;
+            laCle = (int)this.dataGridViewVille.CurrentRow.Cells[0].Value;
+            laVille = this.villeDonnees.RecupererVille(laCle);
+
+            FrmModifVille frmModif = new FrmModifVille(laVille);
+            frmModif.Text = laVille.ToString();
+            frmModif.ShowDialog();
+            this.afficheVilles();
         }
 
         private void Quitter_Click(object sender, EventArgs e)
