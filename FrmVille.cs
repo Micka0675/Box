@@ -18,7 +18,7 @@ namespace Box
     public partial class FrmVille : Form
     {
        
-        private VilleDonnees villeDonnees;
+         private VilleDonnees villeDonnees;
 
         /// <summary>
         /// Constructeur pour le formulaire FrmVille
@@ -106,6 +106,12 @@ namespace Box
         private void Quitter_Click(object sender, EventArgs e)
         {
             this.Close();
-        }    
+        }
+
+        private void btnGarageVille_Click(object sender, EventArgs e)
+        {
+            FrmAfficherGarageVille afficherGarageVille = new FrmAfficherGarageVille();
+            afficherGarageVille.ShowDialog();
+        }
     }
 }

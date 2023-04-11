@@ -34,16 +34,19 @@
             this.btnAjouter = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnSupprimer = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGarageVille = new System.Windows.Forms.Button();
             this.lblTitreAffichVille = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVille)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewVille
             // 
+            this.dataGridViewVille.AllowUserToAddRows = false;
+            this.dataGridViewVille.AllowUserToDeleteRows = false;
             this.dataGridViewVille.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewVille.Location = new System.Drawing.Point(177, 137);
             this.dataGridViewVille.Name = "dataGridViewVille";
+            this.dataGridViewVille.ReadOnly = true;
             this.dataGridViewVille.Size = new System.Drawing.Size(470, 150);
             this.dataGridViewVille.TabIndex = 0;
             // 
@@ -98,15 +101,16 @@
             this.btnSupprimer.UseVisualStyleBackColor = false;
             this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
-            // button1
+            // btnGarageVille
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(307, 321);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(167, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Afficher la liste des garages";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnGarageVille.BackColor = System.Drawing.SystemColors.Control;
+            this.btnGarageVille.Location = new System.Drawing.Point(307, 321);
+            this.btnGarageVille.Name = "btnGarageVille";
+            this.btnGarageVille.Size = new System.Drawing.Size(167, 23);
+            this.btnGarageVille.TabIndex = 8;
+            this.btnGarageVille.Text = "Afficher la liste des garages";
+            this.btnGarageVille.UseVisualStyleBackColor = false;
+            this.btnGarageVille.Click += new System.EventHandler(this.btnGarageVille_Click);
             // 
             // lblTitreAffichVille
             // 
@@ -126,7 +130,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblTitreAffichVille);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnGarageVille);
             this.Controls.Add(this.btnSupprimer);
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnAjouter);
@@ -149,7 +153,7 @@
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.Button btnSupprimer;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGarageVille;
         private System.Windows.Forms.Label lblTitreAffichVille;
     }
 }
