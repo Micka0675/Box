@@ -46,13 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Donnees.cs" />
-    <Compile Include="frmAjouterLocataire.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAjouterLocataire.Designer.cs">
-      <DependentUpon>frmAjouterLocataire.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmAjoutVille.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,11 +53,11 @@
       <DependentUpon>FrmAjoutVille.cs</DependentUpon>
     </Compile>
     <Compile Include="Box.cs" />
-    <Compile Include="frmAccueil.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAccueil.Designer.cs">
-      <DependentUpon>frmAccueil.cs</DependentUpon>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmBox.cs">
       <SubType>Form</SubType>
@@ -90,12 +83,6 @@
     <Compile Include="FrmVille.Designer.cs">
       <DependentUpon>FrmVille.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmVisuLocataires.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmVisuLocataires.Designer.cs">
-      <DependentUpon>frmVisuLocataires.cs</DependentUpon>
-    </Compile>
     <Compile Include="Mbox.cs" />
     <Compile Include="MGarage.cs" />
     <Compile Include="FrmLocataire.cs">
@@ -105,22 +92,15 @@
       <DependentUpon>FrmLocataire.cs</DependentUpon>
     </Compile>
     <Compile Include="MLocataire.cs" />
-    <Compile Include="Outils.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MVille.cs" />
-<<<<<<< Updated upstream
     <Compile Include="VilleDonnees.cs" />
-=======
-    <EmbeddedResource Include="frmAjouterLocataire.resx">
-      <DependentUpon>frmAjouterLocataire.cs</DependentUpon>
-    </EmbeddedResource>
->>>>>>> Stashed changes
     <EmbeddedResource Include="FrmAjoutVille.resx">
       <DependentUpon>FrmAjoutVille.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAccueil.resx">
-      <DependentUpon>frmAccueil.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBox.resx">
       <DependentUpon>FrmBox.cs</DependentUpon>
@@ -136,9 +116,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLocataire.resx">
       <DependentUpon>FrmLocataire.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmVisuLocataires.resx">
-      <DependentUpon>frmVisuLocataires.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
