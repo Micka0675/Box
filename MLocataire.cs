@@ -8,13 +8,14 @@ namespace Box
 {
     public class MLocataire
     {
-        private int idLoc;
+       
+        private Int32 idLoc;
         private string nomLoc;
         private string prenLoc;
         private string adresse;
-        private MVille ville;
+        private string ville;
 
-        public int IdLoc
+        public Int32 IdLoc
         {
             get { return idLoc; }
             set { idLoc = value; }
@@ -34,23 +35,20 @@ namespace Box
             get { return adresse; }
             set { adresse = value; }
         }
-        public MVille Ville
+        public string Ville
         {
             get { return ville; }
             set { ville = value; }
         }
 
-        public MLocataire(string consNomLoc, string consPrenLoc)
+      /*  public MLocataire(Int32 consNumLoc,string consNomLoc, string consPrenLoc, string adresse ,string consVilleLoc)
         {
+            this.idLoc = consNumLoc;
             this.nomLoc = consNomLoc;
-            this.nomLoc = consPrenLoc;
-        }
-        public MLocataire(string consNomLoc, string consPrenLoc, string adresse)
-        {
-            this.nomLoc = consNomLoc;
-            this.nomLoc = consPrenLoc;
+            this.prenLoc = consPrenLoc;
             this.adresse = adresse;
-        }
+            this.ville = consVilleLoc;
+        }*/
 
     }
 }
