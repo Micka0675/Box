@@ -12,6 +12,7 @@ namespace Box
     /// </summary>
     public class VilleDonnees
     {
+        private static int compteur = 0;
         /// <summary>
         /// Liste qui stocke des objets de type MVille
         /// </summary>
@@ -40,7 +41,7 @@ namespace Box
         /// <param name="uneVille"></param>
         public void AjouterVille(MVille uneVille)
         {
-           
+            compteur++;
             this.lesVilles.Add(uneVille.GetId(), uneVille);
             
         }
@@ -83,7 +84,7 @@ namespace Box
             //throw new Exception("Aucune ville pour le numéro " + idVilleModif.ToString());
             MVille laVille;
             laVille= this.lesVilles[idVilleModif] as MVille;
-            if(laVille!=null) 
+            if(laVille == null) 
             {
                 throw new Exception("Aucune ville trouvée pour l'id " + idVilleModif);
             }
