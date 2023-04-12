@@ -31,17 +31,20 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_quit = new System.Windows.Forms.Button();
             this.btn_ajoutGar = new System.Windows.Forms.Button();
+            this.btn_modifGar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(124, 12);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(664, 426);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btn_quit
             // 
@@ -63,11 +66,21 @@
             this.btn_ajoutGar.UseVisualStyleBackColor = true;
             this.btn_ajoutGar.Click += new System.EventHandler(this.btn_ajoutGar_Click);
             // 
+            // btn_modifGar
+            // 
+            this.btn_modifGar.Location = new System.Drawing.Point(12, 91);
+            this.btn_modifGar.Name = "btn_modifGar";
+            this.btn_modifGar.Size = new System.Drawing.Size(106, 45);
+            this.btn_modifGar.TabIndex = 0;
+            this.btn_modifGar.Text = "Modifier Garage";
+            this.btn_modifGar.Click += new System.EventHandler(this.btn_modifGar_Click);
+            // 
             // frmGarage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(836, 484);
+            this.Controls.Add(this.btn_modifGar);
             this.Controls.Add(this.btn_ajoutGar);
             this.Controls.Add(this.btn_quit);
             this.Controls.Add(this.dataGridView1);
@@ -84,5 +97,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_quit;
         private System.Windows.Forms.Button btn_ajoutGar;
+        private System.Windows.Forms.Button btn_modifGar;
     }
 }

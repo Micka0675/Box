@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace Box
 {
-    public partial class frmGarage : Form
+    public partial class FrmModifGarage : Form
     {
-
-        public frmGarage()
+        public FrmModifGarage()
         {
             InitializeComponent();
-
             afficherGarage();
         }
 
@@ -38,36 +36,17 @@ namespace Box
                 table1.Rows.Add(row);
 
             }
-            dataGridView1.DataSource = table1;
-            dataGridView1.Refresh();
+
+            dgv_modifGar.DataSource = table1;
+            dgv_modifGar.Refresh();
             table1 = null;
             row = null;
 
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void frmGarage_Load(object sender, EventArgs e)
+        private void dgv_modifGar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-        }
-
-        private void btn_ajoutGar_Click(object sender, EventArgs e)
-        {
-            FrmAjoutGarage frmAjoutGarage = new FrmAjoutGarage();
-            frmAjoutGarage.ShowDialog();
-            afficherGarage();
-        }
-
-        private void btn_modifGar_Click(object sender, EventArgs e)
-        {
-            FrmModifGarage frmModifGarge = new FrmModifGarage();
-            frmModifGarge.ShowDialog();
-            afficherGarage();
         }
     }
 }

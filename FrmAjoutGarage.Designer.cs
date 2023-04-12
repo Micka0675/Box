@@ -92,7 +92,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(805, 457);
             this.Controls.Add(this.btn_ajoutAnnul);
             this.Controls.Add(this.btn_ajoutValid);
             this.Controls.Add(this.txt_ajoutAdr);
