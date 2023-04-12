@@ -9,7 +9,7 @@ namespace Box
 {
     public class MVille
     {
-      
+        private static int compteur = 0;
         private int idVille;
         public int GetId()
         {
@@ -37,9 +37,10 @@ namespace Box
 
         private DataTable dtGarage;
 
-        public MVille(int IdVille, string NomVille, string Cp)
+        public MVille(string NomVille, string Cp)
         {
-            this.idVille = IdVille;
+            compteur++;
+            this.idVille = compteur;
             nomVille = NomVille;
             this.cp = Cp;
             lesGarages = new List<MGarage>();

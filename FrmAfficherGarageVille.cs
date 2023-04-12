@@ -21,7 +21,7 @@ namespace Box
         {
             InitializeComponent();
             VilleDonnees villeDonnee = new VilleDonnees();
-            this.laVille = new MVille(1, "Nice", "06000");
+            this.laVille = new MVille("Nice", "06000");
             villeDonnee.AjouterVille(this.laVille);
 
             MGarage unGarage;
