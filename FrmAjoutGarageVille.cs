@@ -10,21 +10,15 @@ using System.Windows.Forms;
 
 namespace Box
 {
-    /// <summary>
-    ///  Classe enfant de la classe native Form. Paramètre la composition du formulaire d'ajout et ses events
-    /// </summary>
-    public partial class FrmAjoutVille : Form
+    public partial class FrmAjoutGarageVille : Form
     {
-       private static int compteur = 1;
-
-        private VilleDonnees laVilleDonnee;
-        public FrmAjoutVille(VilleDonnees uneVilleDonnee)
+        private MVille laVille;
+        public FrmAjoutGarageVille(MVille uneVille)
         {
-            InitializeComponent();   
-            this.laVilleDonnee = uneVilleDonnee;
+            InitializeComponent();
+            this.laVille = uneVille;
         }
-
-        private void btnValider_Click(object sender, EventArgs e)
+        private void btnValiderG_Click(object sender, EventArgs e)
         {
             //  instancie le bon objet MVille et l'ajoute à la collection de sa section  
             if (this.instancie())
@@ -39,26 +33,27 @@ namespace Box
         private Boolean instancie()
         {
             // créer une référence d'objet MVille
-            MVille nouvelleVille;
-            compteur++;
+            MGarage nouveauGarage;
+
             try
             {
                 // instancie une ville et lui affecte toutes ses propriétés
-                nouvelleVille = new MVille(compteur, textBoxAjoutV.Text, textBoxAjoutCp.Text);
+                nouveauGarage = new MGarage(int.Parse(textBoxAjoutIdG.Text.Trim()), textBoxAjoutNumG.Text, textBoxAjoutAdrG.Text);
 
                 // ajoute la nouvelle ville dans la liste lesVilles
-                this.laVilleDonnee.AjouterVille(nouvelleVille);
+                this.laVille.AjouterGarage(nouveauGarage);
                 return true;
 
             }
             catch (Exception ex)
             {
-                nouvelleVille = null;
-                MessageBox.Show("Erreur : \n" + ex.Message, "Ajout de stagiaire");
+                nouveauGarage = null;
+                MessageBox.Show("Erreur : \n" + ex.Message, "Ajout de garage");
                 return false;
             }
 
         }
-    }
 
+       
+    }
 }

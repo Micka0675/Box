@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Box
 {
+    /// <summary>
+    /// test des tétons
+    /// </summary>
     public class MLocataire
     {
         private int idLoc;
