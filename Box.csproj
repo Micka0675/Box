@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAjoutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAjoutBox.Designer.cs">
+      <DependentUpon>frmAjoutBox.cs</DependentUpon>
     <Compile Include="FrmAfficherGarageVille.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +113,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MVille.cs" />
     <Compile Include="VilleDonnees.cs" />
+    <EmbeddedResource Include="frmAjoutBox.resx">
+      <DependentUpon>frmAjoutBox.cs</DependentUpon>
     <EmbeddedResource Include="FrmAfficherGarageVille.resx">
       <DependentUpon>FrmAfficherGarageVille.cs</DependentUpon>
     </EmbeddedResource>
