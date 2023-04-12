@@ -21,16 +21,18 @@ namespace Box
             /// Au chargement du frmBox, initialisation des components
             InitializeComponent();
 
+            // ajout de données en 'dur'
             DataTable boxsInfos = new DataTable();
-            boxsInfos.Columns.Add("numero box",typeof(string));
+            boxsInfos.Columns.Add("numero box", typeof(string));
             boxsInfos.Columns.Add("loyer", typeof(float));
             boxsInfos.Columns.Add("charges", typeof(float));
             boxsInfos.Columns.Add("total", typeof(float));
 
+
             List<Mbox> boxList = new List<Mbox>()
             {
                 new Mbox("1", 90, 35),
-                new Mbox("2", 50 , 74)
+                new Mbox("2", 50, 74)
             };
 
             foreach (Mbox box in boxList)
@@ -41,12 +43,20 @@ namespace Box
                 row[1] = box.MontantLoyer;
                 row[2] = box.MontantCharges;
                 row[3] = box.MontantCharges + box.MontantLoyer;//faux
+
                 boxsInfos.Rows.Add(row);
             }
             //lier le datagridview aux données
+
             dataGridView1.DataSource = boxsInfos;
-                 
+
         }
+
+         
+
+            //methode traitant ajout equipe par admin
+             
+        
 
         private void Quitter_Click(object sender, EventArgs e)
         {
@@ -56,6 +66,18 @@ namespace Box
         private void frmBox_Load(object sender, EventArgs e)
         {   
 
+        }
+
+        private void Ajouter_Click(object sender, EventArgs e)
+        {
+            frmAjoutBox frmAjoutBox = new frmAjoutBox();
+            frmAjoutBox.Show();
+        }
+
+        internal void addDataGridItems( DataTable boxsInfos)
+        {
+            
+            dataGridView1.DataSource = boxsInfos;
         }
     }
 }
