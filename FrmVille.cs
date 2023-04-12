@@ -18,7 +18,7 @@ namespace Box
     public partial class FrmVille : Form
     {
        
-         private VilleDonnees villeDonnees;
+         private MVille uneVille;
 
         /// <summary>
         /// Constructeur pour le formulaire FrmVille
@@ -27,9 +27,9 @@ namespace Box
         {
             InitializeComponent();
 
-            MVille uneVille = new MVille("Nice", "06000");
-            this.villeDonnees = new VilleDonnees();
-            this.villeDonnees.AjouterVille(uneVille);
+            MVille uneVille = new MVille(1, "Nice", "06000");
+            this.uneVille = new MVille();
+            this.uneVille.AjouterVille(uneVille);
             this.afficheVilles();
 
         }
@@ -39,7 +39,7 @@ namespace Box
         /// </summary>
         public void afficheVilles()
         {
-            this.dataGridViewVille.DataSource = villeDonnees.ListerVille();
+            this.dataGridViewVille.DataSource = uneVille.ListerVille();
             this.dataGridViewVille.Refresh();
 
             this.btnSupprimer.Enabled = (this.dataGridViewVille.CurrentRow == null ? false : true);
@@ -53,7 +53,7 @@ namespace Box
         /// <param name="e"></param>
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            FrmAjoutVille ajouterVille = new FrmAjoutVille(this.villeDonnees);
+            FrmAjoutVille ajouterVille = new FrmAjoutVille(this.uneVille);
             if (ajouterVille.ShowDialog() == DialogResult.OK)
             {
                 // régénère l'affichage du dataGridView 
@@ -78,7 +78,7 @@ namespace Box
                 // NB: messagebox retourne une valeur exploitable !
                 if (MessageBox.Show("Voulez-vous supprimer la ville : " + nom.ToString(), "Suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    this.villeDonnees.SupprimerVille(cle);
+                    this.uneVille.SupprimerVille(cle);
                     // réaffiche la datagridview
                     afficheVilles();
                 }
@@ -95,7 +95,7 @@ namespace Box
             MVille laVille;
             int laCle;
             laCle = (int)this.dataGridViewVille.CurrentRow.Cells[0].Value;
-            laVille = this.villeDonnees.RecupererVille(laCle);
+            laVille = this.uneVille.RecupererVille(laCle);
 
             FrmModifVille frmModif = new FrmModifVille(laVille);
             frmModif.Text = laVille.ToString();

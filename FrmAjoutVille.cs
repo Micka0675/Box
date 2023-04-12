@@ -15,11 +15,12 @@ namespace Box
     /// </summary>
     public partial class FrmAjoutVille : Form
     {
-        private VilleDonnees laVilleDonnee;
-        public FrmAjoutVille(VilleDonnees uneVilleDonnee)
+        private static int compteur = 1;
+        private MVille laVille;
+        public FrmAjoutVille(MVille uneVilleDonnee)
         {
             InitializeComponent();   
-            this.laVilleDonnee = uneVilleDonnee;
+            this.laVille = uneVilleDonnee;
         }
 
         private void btnValider_Click(object sender, EventArgs e)
@@ -38,14 +39,15 @@ namespace Box
         {
             // créer une référence d'objet MVille
             MVille nouvelleVille;
+            compteur++;
 
             try
             {
                 // instancie une ville et lui affecte toutes ses propriétés
-                nouvelleVille = new MVille(textBoxAjoutV.Text, textBoxAjoutCp.Text);
+                nouvelleVille = new MVille(compteur, textBoxAjoutV.Text, textBoxAjoutCp.Text);
 
                 // ajoute la nouvelle ville dans la liste lesVilles
-                this.laVilleDonnee.AjouterVille(nouvelleVille);
+                this.laVille.AjouterVille(nouvelleVille);
                 return true;
 
             }

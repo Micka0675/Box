@@ -32,6 +32,7 @@
             this.btnSupprimer = new System.Windows.Forms.Button();
             this.btnAjouterG = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
+            this.btnQuitter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,11 +72,22 @@
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
             // 
+            // btnQuitter
+            // 
+            this.btnQuitter.Location = new System.Drawing.Point(684, 395);
+            this.btnQuitter.Name = "btnQuitter";
+            this.btnQuitter.Size = new System.Drawing.Size(75, 23);
+            this.btnQuitter.TabIndex = 4;
+            this.btnQuitter.Text = "QUITTER";
+            this.btnQuitter.UseVisualStyleBackColor = true;
+            this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
+            // 
             // FrmAfficherGarageVille
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.btnAjouterG);
             this.Controls.Add(this.btnSupprimer);
@@ -93,5 +105,6 @@
         private System.Windows.Forms.Button btnSupprimer;
         private System.Windows.Forms.Button btnAjouterG;
         private System.Windows.Forms.Button btnModifier;
+        private System.Windows.Forms.Button btnQuitter;
     }
 }
