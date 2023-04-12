@@ -13,6 +13,7 @@ using System.Windows.Forms;
 namespace Box
 {
     /// <summary>
+    /// tatattatatatatatatata
     /// Classe enfant de la classe native Form. Paramètre la composition du formulaire de gestion des villes et ses events
     /// </summary>
     public partial class FrmVille : Form
