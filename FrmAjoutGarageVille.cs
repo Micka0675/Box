@@ -32,8 +32,9 @@ namespace Box
         }
         private Boolean instancie()
         {
-            // créer une référence d'objet MVille
+            // créer une référence d'objet M
             MGarage nouveauGarage;
+
 
             try
             {

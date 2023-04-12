@@ -20,8 +20,8 @@ namespace Box
         public FrmAfficherGarageVille()
         {
             InitializeComponent();
-            VilleDonnees villeDonnee = new VilleDonnees();
-            this.laVille = new MVille("Nice", "06000");
+            MVille villeDonnee = new MVille();
+            this.laVille = new MVille(1, "Nice", "06000");
             villeDonnee.AjouterVille(this.laVille);
 
             MGarage unGarage;
@@ -43,6 +43,9 @@ namespace Box
 
         private void btnAjouterG_Click(object sender, EventArgs e)
         {
+            int cle;
+            cle = (int)this.dataGridViewGV.CurrentRow.Cells[0].Value;
+
             FrmAjoutGarageVille ajouterGV = new FrmAjoutGarageVille(this.laVille);
             if (ajouterGV.ShowDialog() == DialogResult.OK)
             {
@@ -84,7 +87,7 @@ namespace Box
         //    MVille laVille;
         //    int laCle;
         //    laCle = (int)this.dataGridViewVille.CurrentRow.Cells[0].Value;
-        //    laVille = this.villeDonnees.RecupererVille(laCle);
+        //    laVille = this.MVille.RecupererVille(laCle);
 
         //    FrmModifVille frmModif = new FrmModifVille(laVille);
         //    frmModif.Text = laVille.ToString();
@@ -93,6 +96,11 @@ namespace Box
         //}
 
         private void Quitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnQuitter_Click(object sender, EventArgs e)
         {
             this.Close();
         }
