@@ -38,7 +38,7 @@ namespace Box
             try
             {
                 // instancie une ville et lui affecte toutes ses propriétés
-                nouveauGarage = new MGarage(int.Parse(textBoxAjoutIdG.Text.Trim()), textBoxAjoutNumG.Text, textBoxAjoutAdrG.Text);
+                nouveauGarage = new MGarage(textBoxAjoutNumG.Text, textBoxAjoutAdrG.Text);
 
                 // ajoute le nouveau garage dans la liste lesGarages
                 this.laVille.AjouterGarage(nouveauGarage);

@@ -10,7 +10,7 @@ namespace Box
     {
         private string numGarage;
         /// <summary>
-        /// fils de sa mére
+        /// TRALALA
         /// </summary>
         public string NumGarage
         {
@@ -41,11 +41,10 @@ namespace Box
             get { return ville; }
             set { ville = value; }
         }
-        public MGarage(int consIdGarage,string consNumGarage, string consAdresse)
+        public MGarage(string consNumGarage, string consAdresse)
         { 
             this.numGarage= consNumGarage;
             this.adresse = consAdresse;
-            this.idGarage = consIdGarage;
         }
     }
 }
