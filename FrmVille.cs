@@ -27,7 +27,7 @@ namespace Box
         {
             InitializeComponent();
 
-            MVille uneVille = new MVille(1, "Nice", "06000");
+            MVille uneVille = new MVille("Nice", "06000");
             this.villeDonnees = new VilleDonnees();
             this.villeDonnees.AjouterVille(uneVille);
             this.afficheVilles();
@@ -54,7 +54,6 @@ namespace Box
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             FrmAjoutVille ajouterVille = new FrmAjoutVille(this.villeDonnees);
-       
             if (ajouterVille.ShowDialog() == DialogResult.OK)
             {
                 // régénère l'affichage du dataGridView 
