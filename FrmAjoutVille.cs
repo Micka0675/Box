@@ -15,6 +15,8 @@ namespace Box
     /// </summary>
     public partial class FrmAjoutVille : Form
     {
+       private static int compteur = 1;
+
         private VilleDonnees laVilleDonnee;
         public FrmAjoutVille(VilleDonnees uneVilleDonnee)
         {
@@ -38,11 +40,11 @@ namespace Box
         {
             // créer une référence d'objet MVille
             MVille nouvelleVille;
-
+            compteur++;
             try
             {
                 // instancie une ville et lui affecte toutes ses propriétés
-                nouvelleVille = new MVille(textBoxAjoutV.Text, textBoxAjoutCp.Text);
+                nouvelleVille = new MVille(compteur, textBoxAjoutV.Text, textBoxAjoutCp.Text);
 
                 // ajoute la nouvelle ville dans la liste lesVilles
                 this.laVilleDonnee.AjouterVille(nouvelleVille);
