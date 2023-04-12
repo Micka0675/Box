@@ -25,7 +25,7 @@ namespace Box
             villeDonnee.AjouterVille(this.laVille);
 
             MGarage unGarage;
-            unGarage = new MGarage(1, "N°1", "48 chemin de la Boustifaille");
+            unGarage = new MGarage("N°1", "48 chemin de la Boustifaille");
             this.laVille.AjouterGarage(unGarage);
             this.AfficheGarage();
 

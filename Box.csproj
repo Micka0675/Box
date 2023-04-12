@@ -46,11 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DonneesGar.cs" />
     <Compile Include="FrmAfficherGarageVille.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAfficherGarageVille.Designer.cs">
       <DependentUpon>FrmAfficherGarageVille.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAjoutGarage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAjoutGarage.Designer.cs">
+      <DependentUpon>FrmAjoutGarage.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAjoutGarageVille.cs">
       <SubType>Form</SubType>
@@ -110,6 +117,9 @@
     <Compile Include="VilleDonnees.cs" />
     <EmbeddedResource Include="FrmAfficherGarageVille.resx">
       <DependentUpon>FrmAfficherGarageVille.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAjoutGarage.resx">
+      <DependentUpon>FrmAjoutGarage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAjoutGarageVille.resx">
       <DependentUpon>FrmAjoutGarageVille.cs</DependentUpon>
