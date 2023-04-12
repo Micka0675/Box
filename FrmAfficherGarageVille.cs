@@ -17,7 +17,7 @@ namespace Box
         /// <summary>
         /// Constructeur pour le formulaire FrmVille
         /// </summary>
-        public FrmAfficherGarageVille()
+        public FrmAfficherGarageVille(MVille laVille)
         {
             InitializeComponent();
             VilleDonnees villeDonnee = new VilleDonnees();
