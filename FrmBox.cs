@@ -25,7 +25,7 @@ namespace Box
             leBox = new Mbox();
             mbox = new Mbox("acab", 13, 12);
             leBox.boxAdd(mbox);
-            this.afficheBox();
+            this.affiche();
         }
 
 
@@ -47,7 +47,7 @@ namespace Box
             frmAjoutBox.Show();
         }
 
-        internal void afficheBox()
+        internal void affiche()
         {
             dataGridView1.DataSource = leBox.afficheBox();
             dataGridView1.Refresh();
