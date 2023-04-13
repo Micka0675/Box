@@ -8,15 +8,11 @@ using System.Windows.Forms;
 
 namespace Box
 {
-    internal class Mbox
+    public class Mbox
     {
         private List <Mbox> listCustom;
         private DataTable boxsInfos;
-        
 
-        /// <summary>
-        /// Mbox Attributes by Micka
-        /// </summary>
         private string numBox;
 
         public string NumBox 
@@ -49,6 +45,7 @@ namespace Box
             this.montantLoyer = MontantLoyer;
             this.montantCharges = MontantCharges;
             listCustom = new List<Mbox>();
+            boxsInfos = new DataTable();
             boxsInfos = new DataTable();
         }
 

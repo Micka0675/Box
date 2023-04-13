@@ -12,13 +12,15 @@ namespace Box
 {
     public partial class frmAjoutBox : Form
     {
-        //private List <Mbox> listCustom;
-        //private DataTable boxInfos;
+
         private frmBox frmBox;
+        private Mbox leBox;
         private Mbox mbox;
-        public frmAjoutBox()
+        public frmAjoutBox(Mbox leBox)
         {
            InitializeComponent();
+            this.frmBox = frmBox;
+            this.leBox = leBox;
         }
 
         private void valider_Click(object sender, EventArgs e)
@@ -27,19 +29,13 @@ namespace Box
             int loyerMontant = Decimal.ToInt32(loyer.Value);
             int chargesMontant = Decimal.ToInt32(charges.Value);
 
-            // instanciation de mbox,boxinfos et lisCustom
+
             
             mbox = new Mbox();
-            //boxInfos = new DataTable();
-            //listCustom = new List<Mbox>()
-            //{
-            //    new Mbox(numBox, loyerMontant, chargesMontant)
-            //};
             mbox = new Mbox(numBox, loyerMontant, chargesMontant);
-            mbox.boxAdd(mbox);
-            //unBox.passAdd(listCustom);
-            //DataTable boxInfos;
-
+            leBox.boxAdd(mbox);
+            frmBox = new frmBox();
+            frmBox.afficheBox();
             this.Close();
             
         }
