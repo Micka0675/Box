@@ -13,16 +13,17 @@ namespace Box
     public partial class FrmAfficherGarageVille : Form
     {
         private MVille laVille;
-
         /// <summary>
         /// Constructeur pour le formulaire FrmVille
         /// </summary>
-        public FrmAfficherGarageVille()
+        public FrmAfficherGarageVille(MVille uneVille)
         {
             InitializeComponent();
-            MVille uneVille = new MVille();
-            this.laVille = new MVille(1, "Nice", "06000");
-            uneVille.AjouterVille(laVille);
+            DonneesV.desVilles = new MVille();
+            this.laVille = new MVille();
+            this.laVille.AjouterVille(uneVille);
+            //this.laVille = new MVille(1, "Nice", "06000");
+            DonneesV.desVilles.AjouterVille(this.laVille);
 
             MGarage unGarage;
             unGarage = new MGarage("N°1", "48 chemin de la Boustifaille");
@@ -34,12 +35,26 @@ namespace Box
         /// <summary>
         /// Méthode mettant à jour la dataGridView
         /// </summary>
+        //public void AfficheGarage()
+        //{
+        //    this.dataGridViewGV.DataSource = laVille.ListerGarage();
+        //    this.dataGridViewGV.Refresh();
+        //    this.btnSupprimer.Enabled = (this.dataGridViewGV == null ? false : true);
+        //}
         public void AfficheGarage()
         {
-            this.dataGridViewGV.DataSource = laVille.ListerGarage();
-            this.dataGridViewGV.Refresh();
-            this.btnSupprimer.Enabled = (this.dataGridViewGV == null ? false : true);
-        }
+            DataTable dtCheck = laVille.ListerGarage();
+            if (dtCheck.Rows.Count > 0)
+            {
+                this.dataGridViewGV.DataSource = dtCheck;
+                this.dataGridViewGV.Refresh();
+                this.btnSupprimer.Enabled = (this.dataGridViewGV == null ? false : true);
+            }
+            else
+            {
+                MessageBox.Show("Aucun garage n'est associé à cette ville");
+            }
+}
 
         private void btnAjouterG_Click(object sender, EventArgs e)
         {
@@ -55,46 +70,39 @@ namespace Box
         ///// </summary>
         ///// <param name="sender"></param>
         ///// <param name="e"></param>
-        //private void btnSupprimer_Click(object sender, EventArgs e)
-        //{
-        //    if (this.dataGridViewGV.CurrentRow != null)
-        //    {
-        //        string nom;
-        //        int cle;
-        //        cle = (int)this.dataGridViewGV.CurrentRow.Cells[0].Value;
-        //        nom = (string)this.dataGridViewGV.CurrentRow.Cells[1].Value;
-        //        // demander confirmation de la suppression
-        //        // NB: messagebox retourne une valeur exploitable !
-        //        if (MessageBox.Show("Voulez-vous supprimer la ville : " + nom.ToString(), "Suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-        //        {
-        //            this.laVille.SupprimerGarage(cle);
-        //            // réaffiche la datagridview
-        //            afficheVilles();
-        //        }
-        //    }
-        //}
-
-        ///// <summary>
-        /////  Modifie l'entrée dans la liste lesVilles correspondant à la ligne sélectionnée et regénère l'affichage de la dataGridView
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //private void btnModifier_Click(object sender, EventArgs e)
-        //{
-        //    MVille laVille;
-        //    int laCle;
-        //    laCle = (int)this.dataGridViewVille.CurrentRow.Cells[0].Value;
-        //    laVille = this.villeDonnees.RecupererVille(laCle);
-
-        //    FrmModifVille frmModif = new FrmModifVille(laVille);
-        //    frmModif.Text = laVille.ToString();
-        //    frmModif.ShowDialog();
-        //    this.afficheVilles();
-        //}
-
-        private void Quitter_Click(object sender, EventArgs e)
+        private void btnSupprimer_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (this.dataGridViewGV.CurrentRow != null)
+            {
+                string nom;
+                nom = (string)this.dataGridViewGV.CurrentRow.Cells[0].Value;
+                // demander confirmation de la suppression
+                // NB: messagebox retourne une valeur exploitable !
+                if (MessageBox.Show("Voulez-vous supprimer le garage : " + nom.ToString(), "Suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    this.laVille.SupprimerGarage(nom);
+                    // réaffiche la datagridview
+                    AfficheGarage();
+                }
+            }
+        }
+
+        /// <summary>
+        ///  Modifie l'entrée dans la liste lesVilles correspondant à la ligne sélectionnée et regénère l'affichage de la dataGridView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+            MGarage unGarage;
+            string nom; ;
+            nom = (string)this.dataGridViewGV.CurrentRow.Cells[0].Value;
+            unGarage = this.laVille.RecupererGarage(nom);
+
+            FrmModifierGarageVille frmModif = new FrmModifierGarageVille(unGarage);
+            frmModif.Text = unGarage.ToString();
+            frmModif.ShowDialog();
+            this.AfficheGarage();
         }
 
         private void btnQuitter_Click(object sender, EventArgs e)

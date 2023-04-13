@@ -18,7 +18,7 @@ namespace Box
     public partial class FrmVille : Form
     {
        
-         private MVille uneVille;
+         private MVille laVille;
 
         /// <summary>
         /// Constructeur pour le formulaire FrmVille
@@ -28,8 +28,8 @@ namespace Box
             InitializeComponent();
 
             MVille uneVille = new MVille(1, "Nice", "06000");
-            this.uneVille = new MVille();
-            this.uneVille.AjouterVille(uneVille);
+            this.laVille = new MVille();
+            this.laVille.AjouterVille(uneVille);
             this.afficheVilles();
 
         }
@@ -39,7 +39,7 @@ namespace Box
         /// </summary>
         public void afficheVilles()
         {
-            this.dataGridViewVille.DataSource = uneVille.ListerVille();
+            this.dataGridViewVille.DataSource = laVille.ListerVille();
             this.dataGridViewVille.Refresh();
 
             this.btnSupprimer.Enabled = (this.dataGridViewVille.CurrentRow == null ? false : true);
@@ -53,7 +53,7 @@ namespace Box
         /// <param name="e"></param>
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-            FrmAjoutVille ajouterVille = new FrmAjoutVille(this.uneVille);
+            FrmAjoutVille ajouterVille = new FrmAjoutVille(this.laVille);
             if (ajouterVille.ShowDialog() == DialogResult.OK)
             {
                 // régénère l'affichage du dataGridView 
@@ -78,7 +78,7 @@ namespace Box
                 // NB: messagebox retourne une valeur exploitable !
                 if (MessageBox.Show("Voulez-vous supprimer la ville : " + nom.ToString(), "Suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    this.uneVille.SupprimerVille(cle);
+                    this.laVille.SupprimerVille(cle);
                     // réaffiche la datagridview
                     afficheVilles();
                 }
@@ -92,13 +92,13 @@ namespace Box
         /// <param name="e"></param>
         private void btnModifier_Click(object sender, EventArgs e)
         {
-            MVille laVille;
+            MVille uneVille;
             int laCle;
             laCle = (int)this.dataGridViewVille.CurrentRow.Cells[0].Value;
-            laVille = this.uneVille.RecupererVille(laCle);
+            uneVille = this.laVille.RecupererVille(laCle);
 
-            FrmModifVille frmModif = new FrmModifVille(laVille);
-            frmModif.Text = laVille.ToString();
+            FrmModifVille frmModif = new FrmModifVille(uneVille);
+            frmModif.Text = uneVille.ToString();
             frmModif.ShowDialog();
             this.afficheVilles();
         }
@@ -110,7 +110,13 @@ namespace Box
 
         private void btnGarageVille_Click(object sender, EventArgs e)
         {
-            FrmAfficherGarageVille afficherGarageVille = new FrmAfficherGarageVille();
+            MVille uneVille;
+
+            int laCle;
+            laCle = (int)this.dataGridViewVille.CurrentRow.Cells[0].Value;
+            uneVille = this.laVille.RecupererVille(laCle);
+
+            FrmAfficherGarageVille afficherGarageVille = new FrmAfficherGarageVille(uneVille);
             afficherGarageVille.ShowDialog();
         }
     }

@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DonneesGar.cs" />
+    <Compile Include="DonneesV.cs" />
     <Compile Include="frmAjoutBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +103,12 @@
     <Compile Include="FrmModifGarage.Designer.cs">
       <DependentUpon>FrmModifGarage.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmModifierGarageVille.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModifierGarageVille.Designer.cs">
+      <DependentUpon>FrmModifierGarageVille.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmModifVille.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmModifGarage.resx">
       <DependentUpon>FrmModifGarage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModifierGarageVille.resx">
+      <DependentUpon>FrmModifierGarageVille.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmModifVille.resx">
       <DependentUpon>FrmModifVille.cs</DependentUpon>

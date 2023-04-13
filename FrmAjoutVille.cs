@@ -17,10 +17,10 @@ namespace Box
     {
         private static int compteur = 1;
         private MVille laVille;
-        public FrmAjoutVille(MVille uneVilleDonnee)
+        public FrmAjoutVille(MVille uneVille)
         {
             InitializeComponent();   
-            this.laVille = uneVilleDonnee;
+            this.laVille = uneVille;
         }
 
         private void btnValider_Click(object sender, EventArgs e)
@@ -58,6 +58,11 @@ namespace Box
                 return false;
             }
 
+        }
+
+        private void btnAnnulerAjout_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
         }
     }
 

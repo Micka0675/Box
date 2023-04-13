@@ -96,15 +96,15 @@ namespace Box
             //}
             //// Si la ville recherchée n'a pas été trouvée dans la boucle, génére une exception
             //throw new Exception("Aucune ville pour le numéro " + idVilleModif.ToString());
-            MVille laVille;
-            laVille = this.lesVilles[idVilleModif] as MVille;
-            if (laVille == null)
+            MVille uneVille;
+            uneVille = this.lesVilles[idVilleModif] as MVille;
+            if (uneVille == null)
             {
                 throw new Exception("Aucune ville trouvée pour l'id " + idVilleModif);
             }
             else
             {
-                return laVille;
+                return uneVille;
             }
 
         }
@@ -133,11 +133,11 @@ namespace Box
         }
 
         private List<MGarage> lesGarages = new List<MGarage>();
-        public List<MGarage> LesGarages
-        {
-            get { return lesGarages; }
-            set { lesGarages = value; }
-        }
+        //public List<MGarage> LesGarages
+        //{
+        //    get { return lesGarages; }
+        //    set { lesGarages = value; }
+        //}
 
         private DataTable dtGarage;
 
@@ -148,7 +148,6 @@ namespace Box
             this.cp = Cp;
             lesGarages = new List<MGarage>();
             dtGarage = new DataTable();
-            this.dtGarage.Columns.Add(new DataColumn("ID", typeof(int)));
             this.dtGarage.Columns.Add(new DataColumn("Nom", typeof(string)));
             this.dtGarage.Columns.Add(new DataColumn("Adresse", typeof(string)));
         }
@@ -157,27 +156,61 @@ namespace Box
             this.lesGarages.Add(unGarage);
         }
 
-        public void SupprimerGarage(int idGarageSuppr)
+        public void SupprimerGarage(string nomGarageSuppr)
         {
-            bool idExiste = lesGarages.Any(objet => objet.IdGarage == idGarageSuppr);
-            if (idExiste)
+            bool nomExiste = lesGarages.Any(objet => objet.NumGarage == nomGarageSuppr);
+            if (nomExiste)
             {
-                lesGarages.RemoveAll(objet => objet.IdGarage == idGarageSuppr);
+                lesGarages.RemoveAll(objet => objet.NumGarage == nomGarageSuppr);
             }
         }
+        public MGarage RecupererGarage(string nomGarageModif)
+        {
 
+            bool nomExiste = lesGarages.Any(objet => objet.NumGarage == nomGarageModif);
+        
+            if (!nomExiste)
+            {
+                throw new Exception("Aucune ville trouvée pour l'id " + nomGarageModif);
+            }
+            else
+            {
+                return lesGarages.FirstOrDefault();
+            }
+
+        }
+        //public DataTable ListerGarage()
+        //{
+        //    this.dtGarage.Clear();
+        //    foreach (MGarage unGarage in lesGarages)
+        //    {
+        //        DataRow row;
+        //        row = dtGarage.NewRow();
+        //        row[0] = unGarage.NumGarage;
+        //        row[1] = unGarage.Adresse;
+        //        this.dtGarage.Rows.Add(row);
+
+        //    }
+        //    return this.dtGarage;
+        //}
         public DataTable ListerGarage()
         {
-            this.dtGarage.Clear();
-            foreach(MGarage unGarage in lesGarages)
+            if (this.dtGarage == null)
             {
-                DataRow row;
-                row = dtGarage.NewRow();
-                row[0] = unGarage.IdGarage;
-                row[1] = unGarage.NumGarage;
-                row[2] = unGarage.Adresse;
+                this.dtGarage = new DataTable();
+                this.dtGarage.Columns.Add("Numéro garage", typeof(string));
+                this.dtGarage.Columns.Add("Adresse", typeof(string));
+            }
+            else
+            {
+                this.dtGarage.Clear();
+            }
+            foreach (MGarage unGarage in lesGarages)
+            {
+                DataRow row = this.dtGarage.NewRow();
+                row[0] = unGarage.NumGarage;
+                row[1] = unGarage.Adresse;
                 this.dtGarage.Rows.Add(row);
-
             }
             return this.dtGarage;
         }
