@@ -12,14 +12,11 @@ namespace Box
 {
     public partial class frmAjoutBox : Form
     {
-
-        private frmBox frmBox;
         private Mbox leBox;
         private Mbox mbox;
         public frmAjoutBox(Mbox leBox)
         {
            InitializeComponent();
-            this.frmBox = frmBox;
             this.leBox = leBox;
         }
 
@@ -34,8 +31,7 @@ namespace Box
             mbox = new Mbox();
             mbox = new Mbox(numBox, loyerMontant, chargesMontant);
             leBox.boxAdd(mbox);
-            frmBox = new frmBox();
-            frmBox.afficheBox();
+            leBox.afficheBox();
             this.Close();
             
         }
