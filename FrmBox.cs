@@ -16,7 +16,7 @@ namespace Box
     {
         private List<Mbox> listCustom;
         private frmAjoutBox frmAjoutBox;
-        private Mbox leBox;
+        internal Mbox leBox;
         private Mbox mbox;
         public frmBox()
         {
@@ -26,19 +26,6 @@ namespace Box
             mbox = new Mbox("acab", 13, 12);
             leBox.boxAdd(mbox);
             this.afficheBox();
-
-
-            //instanciation de listCustom
-            //List<Mbox> listCustom = new List<Mbox>();
-
-            // creation d'une dataTable utilisable depuis le constructeur de Mbox
-            //DataTable boxsInfos = new DataTable();
-
-
-            //mbox = new Mbox("", 50, 20);
-            //listCustom.Add(mbox);
-            //mbox.passAdd(listCustom,boxsInfos);
-            //dataGridView1.DataSource = listCustom;
         }
 
 
@@ -56,7 +43,7 @@ namespace Box
 
         private void Ajouter_Click(object sender, EventArgs e)
         {
-            frmAjoutBox frmAjoutBox = new frmAjoutBox();
+            frmAjoutBox frmAjoutBox = new frmAjoutBox(this.leBox);
             frmAjoutBox.Show();
         }
 
