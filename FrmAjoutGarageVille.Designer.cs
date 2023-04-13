@@ -40,7 +40,7 @@
             // 
             // textBoxAjoutNumG
             // 
-            this.textBoxAjoutNumG.Location = new System.Drawing.Point(396, 140);
+            this.textBoxAjoutNumG.Location = new System.Drawing.Point(396, 130);
             this.textBoxAjoutNumG.Name = "textBoxAjoutNumG";
             this.textBoxAjoutNumG.Size = new System.Drawing.Size(100, 20);
             this.textBoxAjoutNumG.TabIndex = 1;
@@ -50,7 +50,7 @@
             this.lblNumG.AutoSize = true;
             this.lblNumG.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumG.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblNumG.Location = new System.Drawing.Point(266, 144);
+            this.lblNumG.Location = new System.Drawing.Point(266, 134);
             this.lblNumG.Name = "lblNumG";
             this.lblNumG.Size = new System.Drawing.Size(102, 16);
             this.lblNumG.TabIndex = 3;
@@ -58,7 +58,7 @@
             // 
             // btnValiderG
             // 
-            this.btnValiderG.Location = new System.Drawing.Point(307, 326);
+            this.btnValiderG.Location = new System.Drawing.Point(360, 324);
             this.btnValiderG.Name = "btnValiderG";
             this.btnValiderG.Size = new System.Drawing.Size(75, 23);
             this.btnValiderG.TabIndex = 4;
@@ -71,7 +71,7 @@
             this.lblAdresseG.AutoSize = true;
             this.lblAdresseG.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAdresseG.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblAdresseG.Location = new System.Drawing.Point(278, 244);
+            this.lblAdresseG.Location = new System.Drawing.Point(278, 234);
             this.lblAdresseG.Name = "lblAdresseG";
             this.lblAdresseG.Size = new System.Drawing.Size(58, 16);
             this.lblAdresseG.TabIndex = 5;
@@ -79,7 +79,7 @@
             // 
             // textBoxAjoutAdrG
             // 
-            this.textBoxAjoutAdrG.Location = new System.Drawing.Point(397, 237);
+            this.textBoxAjoutAdrG.Location = new System.Drawing.Point(397, 227);
             this.textBoxAjoutAdrG.Name = "textBoxAjoutAdrG";
             this.textBoxAjoutAdrG.Size = new System.Drawing.Size(100, 20);
             this.textBoxAjoutAdrG.TabIndex = 6;
@@ -97,7 +97,7 @@
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.Location = new System.Drawing.Point(422, 326);
+            this.btnAnnuler.Location = new System.Drawing.Point(459, 324);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
             this.btnAnnuler.TabIndex = 8;
@@ -107,7 +107,7 @@
             // 
             // btnQuitter
             // 
-            this.btnQuitter.Location = new System.Drawing.Point(646, 385);
+            this.btnQuitter.Location = new System.Drawing.Point(643, 384);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(75, 23);
             this.btnQuitter.TabIndex = 9;

@@ -30,20 +30,19 @@ namespace Box
             MVille uneVille = new MVille(1, "Nice", "06000");
             this.laVille = new MVille();
             this.laVille.AjouterVille(uneVille);
-            this.afficheVilles();
+            this.AfficheVilles();
 
         }
 
         /// <summary>
         /// Méthode mettant à jour la dataGridView
         /// </summary>
-        public void afficheVilles()
+        public void AfficheVilles()
         {
             this.dataGridViewVille.DataSource = laVille.ListerVille();
             this.dataGridViewVille.Refresh();
 
             this.btnSupprimer.Enabled = (this.dataGridViewVille.CurrentRow == null ? false : true);
-
         }
 
         /// <summary>
@@ -57,7 +56,7 @@ namespace Box
             if (ajouterVille.ShowDialog() == DialogResult.OK)
             {
                 // régénère l'affichage du dataGridView 
-                afficheVilles();
+                AfficheVilles();
             }
         }
 
@@ -80,7 +79,7 @@ namespace Box
                 {
                     this.laVille.SupprimerVille(cle);
                     // réaffiche la datagridview
-                    afficheVilles();
+                    AfficheVilles();
                 }
             }
         }
@@ -100,14 +99,14 @@ namespace Box
             FrmModifVille frmModif = new FrmModifVille(uneVille);
             frmModif.Text = uneVille.ToString();
             frmModif.ShowDialog();
-            this.afficheVilles();
-        }
+            this.AfficheVilles();
+        }  
 
-        private void Quitter_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        /// <summary>
+        /// Affiche un nouveau formulaire permettant de gérer les garages stockés dans chaque ville
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGarageVille_Click(object sender, EventArgs e)
         {
             MVille uneVille;
@@ -118,6 +117,11 @@ namespace Box
 
             FrmAfficherGarageVille afficherGarageVille = new FrmAfficherGarageVille(uneVille);
             afficherGarageVille.ShowDialog();
+        }
+
+        private void Quitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
