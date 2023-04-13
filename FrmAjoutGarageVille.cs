@@ -32,12 +32,12 @@ namespace Box
         }
         private Boolean instancie()
         {
-            // créer une référence d'objet MVille
+            // créer une référence d'objet MGarage
             MGarage nouveauGarage;
 
             try
             {
-                // instancie une ville et lui affecte toutes ses propriétés
+                // instancie un garage  et lui affecte toutes ses propriétés
                 nouveauGarage = new MGarage(textBoxAjoutNumG.Text, textBoxAjoutAdrG.Text);
 
                 // ajoute le nouveau garage dans la liste lesGarages

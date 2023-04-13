@@ -10,11 +10,14 @@ using System.Windows.Forms;
 
 namespace Box
 {
+    /// <summary>
+    /// Classe enfant de la classe native Form. Paramètre la composition du formulaire de gestion des garages par villes et ses events
+    /// </summary>
     public partial class FrmAfficherGarageVille : Form
     {
         private MVille laVille;
         /// <summary>
-        /// Constructeur pour le formulaire FrmVille
+        /// Constructeur pour le formulaire FrmAfficherGarageVille
         /// </summary>
         public FrmAfficherGarageVille(MVille uneVille)
         {
@@ -22,25 +25,16 @@ namespace Box
             DonneesV.desVilles = new MVille();
             this.laVille = new MVille();
             this.laVille.AjouterVille(uneVille);
-            //this.laVille = new MVille(1, "Nice", "06000");
             DonneesV.desVilles.AjouterVille(this.laVille);
 
             MGarage unGarage;
             unGarage = new MGarage("N°1", "48 chemin de la Boustifaille");
             this.laVille.AjouterGarage(unGarage);
+            this.lblTitreGV.Text = uneVille.NameVille.ToUpper();
             this.AfficheGarage();
 
         }
 
-        /// <summary>
-        /// Méthode mettant à jour la dataGridView
-        /// </summary>
-        //public void AfficheGarage()
-        //{
-        //    this.dataGridViewGV.DataSource = laVille.ListerGarage();
-        //    this.dataGridViewGV.Refresh();
-        //    this.btnSupprimer.Enabled = (this.dataGridViewGV == null ? false : true);
-        //}
         public void AfficheGarage()
         {
             DataTable dtCheck = laVille.ListerGarage();
@@ -95,14 +89,17 @@ namespace Box
         private void btnModifier_Click(object sender, EventArgs e)
         {
             MGarage unGarage;
-            string nom; ;
-            nom = (string)this.dataGridViewGV.CurrentRow.Cells[0].Value;
-            unGarage = this.laVille.RecupererGarage(nom);
+            if (this.dataGridViewGV.CurrentRow != null)
+            {
+                string nom; ;
+                nom = (string)this.dataGridViewGV.CurrentRow.Cells[0].Value;
+                unGarage = this.laVille.RecupererGarage(nom);
 
-            FrmModifierGarageVille frmModif = new FrmModifierGarageVille(unGarage);
-            frmModif.Text = unGarage.ToString();
-            frmModif.ShowDialog();
-            this.AfficheGarage();
+                FrmModifierGarageVille frmModif = new FrmModifierGarageVille(unGarage);
+                frmModif.Text = unGarage.ToString();
+                frmModif.ShowDialog();
+                this.AfficheGarage();
+            }
         }
 
         private void btnQuitter_Click(object sender, EventArgs e)

@@ -19,19 +19,13 @@ namespace Box
             this.leGarage = unGarage;
             this.textBoxNumGV.Text = this.leGarage.NumGarage;
             this.textBoxAdrGV.Text = this.leGarage.Adresse;
-        }
-
-        private void btnQuitter_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        } 
 
         private void btnValider_Click(object sender, EventArgs e)
         {
             try
             {
-                // modifier les valeurs de la ville pointé par la ref temporaire récupérée par la méthode RecupererGarage()
-                // (sauf id non modifiable et incrémenté)
+                // modifie les valeurs du garage pointé par la ref temporaire récupérée par la méthode RecupererGarage()
                 this.leGarage.NumGarage = this.textBoxNumGV.Text;
                 this.leGarage.Adresse = this.textBoxAdrGV.Text;
                 // fermer le form
@@ -40,8 +34,16 @@ namespace Box
             catch (Exception ex)
             {
                 MessageBox.Show("Erreur : \n" + ex.Message, "Modification du garage");
-
             }
+        }
+
+        private void btnAnnuler_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+        }
+        private void btnQuitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
