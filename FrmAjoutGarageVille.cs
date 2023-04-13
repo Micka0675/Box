@@ -54,6 +54,14 @@ namespace Box
 
         }
 
-       
+        private void btnAnnuler_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void btnQuitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

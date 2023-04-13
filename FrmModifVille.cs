@@ -20,6 +20,8 @@ namespace Box
         {
             InitializeComponent();
             this.laVille = uneVille;
+            this.textBoxNom.Text = this.laVille.NameVille;
+            this.textBoxCp.Text = this.laVille.Cp;
         }
 
         /// <summary>

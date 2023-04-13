@@ -43,6 +43,7 @@
             // 
             this.dataGridViewVille.AllowUserToAddRows = false;
             this.dataGridViewVille.AllowUserToDeleteRows = false;
+            this.dataGridViewVille.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewVille.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewVille.Location = new System.Drawing.Point(177, 137);
             this.dataGridViewVille.Name = "dataGridViewVille";

@@ -38,9 +38,13 @@
             // 
             // dataGridViewGV
             // 
+            this.dataGridViewGV.AllowUserToAddRows = false;
+            this.dataGridViewGV.AllowUserToDeleteRows = false;
+            this.dataGridViewGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewGV.Location = new System.Drawing.Point(128, 121);
             this.dataGridViewGV.Name = "dataGridViewGV";
+            this.dataGridViewGV.ReadOnly = true;
             this.dataGridViewGV.Size = new System.Drawing.Size(498, 150);
             this.dataGridViewGV.TabIndex = 0;
             // 
@@ -52,6 +56,7 @@
             this.btnSupprimer.TabIndex = 1;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
             // btnAjouterG
             // 
@@ -71,6 +76,7 @@
             this.btnModifier.TabIndex = 3;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = true;
+            this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
             // 
             // btnQuitter
             // 
@@ -86,6 +92,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnModifier);
