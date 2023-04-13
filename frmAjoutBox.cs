@@ -31,7 +31,7 @@ namespace Box
 
             Mbox unBox = new Mbox(numBox, loyerMontant, chargesMontant);
             unBox.passAdd(listCustom);
-            DataTable boxInfos;
+            //DataTable boxInfos;
            
             this.Close();
             

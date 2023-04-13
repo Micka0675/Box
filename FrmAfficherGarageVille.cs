@@ -20,9 +20,9 @@ namespace Box
         public FrmAfficherGarageVille()
         {
             InitializeComponent();
-            VilleDonnees villeDonnee = new VilleDonnees();
-            this.laVille = new MVille("Nice", "06000");
-            villeDonnee.AjouterVille(this.laVille);
+            MVille uneVille = new MVille();
+            this.laVille = new MVille(1, "Nice", "06000");
+            uneVille.AjouterVille(laVille);
 
             MGarage unGarage;
             unGarage = new MGarage("N°1", "48 chemin de la Boustifaille");
@@ -93,6 +93,11 @@ namespace Box
         //}
 
         private void Quitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnQuitter_Click(object sender, EventArgs e)
         {
             this.Close();
         }

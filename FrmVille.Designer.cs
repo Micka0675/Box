@@ -110,7 +110,7 @@
             this.btnGarageVille.TabIndex = 8;
             this.btnGarageVille.Text = "Afficher la liste des garages";
             this.btnGarageVille.UseVisualStyleBackColor = false;
-            //this.btnGarageVille.Click += new System.EventHandler(this.btnGarageVille_Click);
+            this.btnGarageVille.Click += new System.EventHandler(this.btnGarageVille_Click);
             // 
             // lblTitreAffichVille
             // 
