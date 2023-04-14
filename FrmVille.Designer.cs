@@ -43,6 +43,7 @@
             // 
             this.dataGridViewVille.AllowUserToAddRows = false;
             this.dataGridViewVille.AllowUserToDeleteRows = false;
+            this.dataGridViewVille.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewVille.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewVille.Location = new System.Drawing.Point(177, 137);
             this.dataGridViewVille.Name = "dataGridViewVille";
@@ -110,7 +111,7 @@
             this.btnGarageVille.TabIndex = 8;
             this.btnGarageVille.Text = "Afficher la liste des garages";
             this.btnGarageVille.UseVisualStyleBackColor = false;
-            //this.btnGarageVille.Click += new System.EventHandler(this.btnGarageVille_Click);
+            this.btnGarageVille.Click += new System.EventHandler(this.btnGarageVille_Click);
             // 
             // lblTitreAffichVille
             // 

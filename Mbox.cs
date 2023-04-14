@@ -8,11 +8,11 @@ using System.Windows.Forms;
 
 namespace Box
 {
-    internal class Mbox
+    public class Mbox
     {
-        /// <summary>
-        /// Mbox Attributes by Micka
-        /// </summary>
+        private List <Mbox> listCustom;
+        private DataTable boxsInfos;
+
         private string numBox;
 
         public string NumBox 
@@ -37,22 +37,37 @@ namespace Box
             set { montantCharges = value; }
         }
 
+
+
         public Mbox(string NumBox, float MontantLoyer, float MontantCharges)
         {
             this.numBox = NumBox;
             this.montantLoyer = MontantLoyer;
             this.montantCharges = MontantCharges;
+            listCustom = new List<Mbox>();
+            boxsInfos = new DataTable();
+            boxsInfos = new DataTable();
         }
 
-        internal DataTable passAdd(List<Mbox> listCustom)
+        public Mbox()
         {
-            // ajout de données en 'dur'
-            DataTable boxsInfos = new DataTable();
+            listCustom = new List<Mbox>();
+            boxsInfos = new DataTable();
             boxsInfos.Columns.Add("numero box", typeof(string));
             boxsInfos.Columns.Add("loyer", typeof(float));
             boxsInfos.Columns.Add("charges", typeof(float));
             boxsInfos.Columns.Add("total", typeof(float));
+        }
 
+        internal void boxAdd(Mbox mbox)
+        {
+            this.listCustom.Add(mbox);
+            
+        }
+
+        internal DataTable afficheBox() 
+        {
+            this.boxsInfos.Clear();
             foreach (Mbox box in listCustom)
             {
                 DataRow row = boxsInfos.NewRow();

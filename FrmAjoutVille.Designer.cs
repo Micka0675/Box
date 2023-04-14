@@ -51,7 +51,7 @@
             // btnValider
             // 
             this.btnValider.BackColor = System.Drawing.SystemColors.Control;
-            this.btnValider.Location = new System.Drawing.Point(397, 335);
+            this.btnValider.Location = new System.Drawing.Point(289, 335);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(75, 23);
             this.btnValider.TabIndex = 1;
@@ -98,12 +98,13 @@
             // btnAnnulerAjout
             // 
             this.btnAnnulerAjout.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAnnulerAjout.Location = new System.Drawing.Point(290, 335);
+            this.btnAnnulerAjout.Location = new System.Drawing.Point(397, 335);
             this.btnAnnulerAjout.Name = "btnAnnulerAjout";
             this.btnAnnulerAjout.Size = new System.Drawing.Size(75, 23);
             this.btnAnnulerAjout.TabIndex = 8;
             this.btnAnnulerAjout.Text = "Annuler";
             this.btnAnnulerAjout.UseVisualStyleBackColor = false;
+            this.btnAnnulerAjout.Click += new System.EventHandler(this.btnAnnulerAjout_Click);
             // 
             // FrmAjoutVille
             // 

@@ -76,7 +76,7 @@
             // btnValider
             // 
             this.btnValider.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnValider.Location = new System.Drawing.Point(417, 313);
+            this.btnValider.Location = new System.Drawing.Point(374, 318);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(75, 23);
             this.btnValider.TabIndex = 4;
@@ -98,7 +98,7 @@
             // btnAnnuler
             // 
             this.btnAnnuler.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAnnuler.Location = new System.Drawing.Point(320, 313);
+            this.btnAnnuler.Location = new System.Drawing.Point(472, 318);
             this.btnAnnuler.Name = "btnAnnuler";
             this.btnAnnuler.Size = new System.Drawing.Size(75, 23);
             this.btnAnnuler.TabIndex = 5;
