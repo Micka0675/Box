@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.dgv_modifGar = new System.Windows.Forms.DataGridView();
+            this.btn_modifQuit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_modifGar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,11 +45,22 @@
             this.dgv_modifGar.TabIndex = 0;
             this.dgv_modifGar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_modifGar_CellClick);
             // 
+            // btn_modifQuit
+            // 
+            this.btn_modifQuit.Location = new System.Drawing.Point(688, 425);
+            this.btn_modifQuit.Name = "btn_modifQuit";
+            this.btn_modifQuit.Size = new System.Drawing.Size(106, 43);
+            this.btn_modifQuit.TabIndex = 1;
+            this.btn_modifQuit.Text = "QUITTER";
+            this.btn_modifQuit.UseVisualStyleBackColor = true;
+            this.btn_modifQuit.Click += new System.EventHandler(this.btn_modifQuit_Click);
+            // 
             // FrmModifGarage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 480);
+            this.Controls.Add(this.btn_modifQuit);
             this.Controls.Add(this.dgv_modifGar);
             this.Name = "FrmModifGarage";
             this.Text = "FrmModifGarage";
@@ -60,5 +72,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgv_modifGar;
+        private System.Windows.Forms.Button btn_modifQuit;
     }
 }
