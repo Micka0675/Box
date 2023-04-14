@@ -35,6 +35,7 @@ namespace Box
             // créer une référence d'objet MGarage
             MGarage nouveauGarage;
 
+
             try
             {
                 // instancie un garage  et lui affecte toutes ses propriétés

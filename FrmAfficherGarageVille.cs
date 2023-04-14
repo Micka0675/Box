@@ -52,6 +52,9 @@ namespace Box
 
         private void btnAjouterG_Click(object sender, EventArgs e)
         {
+            int cle;
+            cle = (int)this.dataGridViewGV.CurrentRow.Cells[0].Value;
+
             FrmAjoutGarageVille ajouterGV = new FrmAjoutGarageVille(this.laVille);
             if (ajouterGV.ShowDialog() == DialogResult.OK)
             {
@@ -100,6 +103,11 @@ namespace Box
                 frmModif.ShowDialog();
                 this.AfficheGarage();
             }
+        }
+
+        private void btnQuitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void btnQuitter_Click(object sender, EventArgs e)

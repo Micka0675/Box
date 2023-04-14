@@ -100,6 +100,16 @@
             this.lblTitreGV.TabIndex = 5;
             this.lblTitreGV.Text = "Zzzz...";
             // 
+            // btnQuitter
+            // 
+            this.btnQuitter.Location = new System.Drawing.Point(690, 405);
+            this.btnQuitter.Name = "btnQuitter";
+            this.btnQuitter.Size = new System.Drawing.Size(75, 23);
+            this.btnQuitter.TabIndex = 4;
+            this.btnQuitter.Text = "QUITTER";
+            this.btnQuitter.UseVisualStyleBackColor = true;
+            this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
+            // 
             // FrmAfficherGarageVille
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
