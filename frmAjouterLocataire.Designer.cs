@@ -35,7 +35,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.gbx_ajouter = new System.Windows.Forms.GroupBox();
             this.txt_num = new System.Windows.Forms.TextBox();
             this.txt_nom = new System.Windows.Forms.TextBox();
             this.txt_prenom = new System.Windows.Forms.TextBox();
@@ -51,6 +50,7 @@
             this.btn_quitter.TabIndex = 0;
             this.btn_quitter.Text = "Quitter";
             this.btn_quitter.UseVisualStyleBackColor = true;
+            this.btn_quitter.Click += new System.EventHandler(this.btn_quitter_Click);
             // 
             // btn_ajouter
             // 
@@ -60,92 +60,84 @@
             this.btn_ajouter.TabIndex = 1;
             this.btn_ajouter.Text = "Ajouter";
             this.btn_ajouter.UseVisualStyleBackColor = true;
+            this.btn_ajouter.Click += new System.EventHandler(this.btn_ajouter_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(104, 53);
+            this.label1.Location = new System.Drawing.Point(230, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
+            this.label1.Text = "Numéro";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(104, 108);
+            this.label2.Location = new System.Drawing.Point(230, 114);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "label2";
+            this.label2.Text = "Nom";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(104, 175);
+            this.label3.Location = new System.Drawing.Point(230, 181);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "label3";
+            this.label3.Text = "Prénom";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(104, 243);
+            this.label4.Location = new System.Drawing.Point(230, 249);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(45, 13);
             this.label4.TabIndex = 5;
-            this.label4.Text = "label4";
+            this.label4.Text = "Adresse";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(104, 313);
+            this.label5.Location = new System.Drawing.Point(230, 319);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(26, 13);
             this.label5.TabIndex = 6;
-            this.label5.Text = "label5";
-            // 
-            // gbx_ajouter
-            // 
-            this.gbx_ajouter.Location = new System.Drawing.Point(443, 127);
-            this.gbx_ajouter.Name = "gbx_ajouter";
-            this.gbx_ajouter.Size = new System.Drawing.Size(200, 100);
-            this.gbx_ajouter.TabIndex = 7;
-            this.gbx_ajouter.TabStop = false;
-            this.gbx_ajouter.Text = "groupBox1";
+            this.label5.Text = "Ville";
             // 
             // txt_num
             // 
-            this.txt_num.Location = new System.Drawing.Point(204, 50);
+            this.txt_num.Location = new System.Drawing.Point(330, 56);
             this.txt_num.Name = "txt_num";
             this.txt_num.Size = new System.Drawing.Size(100, 20);
             this.txt_num.TabIndex = 8;
             // 
             // txt_nom
             // 
-            this.txt_nom.Location = new System.Drawing.Point(204, 101);
+            this.txt_nom.Location = new System.Drawing.Point(330, 107);
             this.txt_nom.Name = "txt_nom";
             this.txt_nom.Size = new System.Drawing.Size(100, 20);
             this.txt_nom.TabIndex = 9;
             // 
             // txt_prenom
             // 
-            this.txt_prenom.Location = new System.Drawing.Point(204, 168);
+            this.txt_prenom.Location = new System.Drawing.Point(330, 174);
             this.txt_prenom.Name = "txt_prenom";
             this.txt_prenom.Size = new System.Drawing.Size(100, 20);
             this.txt_prenom.TabIndex = 10;
             // 
             // txt_adresse
             // 
-            this.txt_adresse.Location = new System.Drawing.Point(204, 240);
+            this.txt_adresse.Location = new System.Drawing.Point(330, 246);
             this.txt_adresse.Name = "txt_adresse";
             this.txt_adresse.Size = new System.Drawing.Size(100, 20);
             this.txt_adresse.TabIndex = 11;
             // 
             // txt_ville
             // 
-            this.txt_ville.Location = new System.Drawing.Point(204, 306);
+            this.txt_ville.Location = new System.Drawing.Point(330, 312);
             this.txt_ville.Name = "txt_ville";
             this.txt_ville.Size = new System.Drawing.Size(100, 20);
             this.txt_ville.TabIndex = 12;
@@ -160,7 +152,6 @@
             this.Controls.Add(this.txt_prenom);
             this.Controls.Add(this.txt_nom);
             this.Controls.Add(this.txt_num);
-            this.Controls.Add(this.gbx_ajouter);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -184,7 +175,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox gbx_ajouter;
         public System.Windows.Forms.TextBox txt_num;
         public System.Windows.Forms.TextBox txt_nom;
         public System.Windows.Forms.TextBox txt_prenom;

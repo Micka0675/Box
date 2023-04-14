@@ -46,9 +46,12 @@
             // 
             // grdLocataire
             // 
+            this.grdLocataire.AllowUserToAddRows = false;
+            this.grdLocataire.AllowUserToDeleteRows = false;
             this.grdLocataire.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdLocataire.Location = new System.Drawing.Point(79, 66);
             this.grdLocataire.Name = "grdLocataire";
+            this.grdLocataire.ReadOnly = true;
             this.grdLocataire.Size = new System.Drawing.Size(547, 208);
             this.grdLocataire.TabIndex = 2;
             this.grdLocataire.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdLocataire_CellContentClick);
