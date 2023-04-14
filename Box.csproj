@@ -97,6 +97,12 @@
     <Compile Include="frmGarage.Designer.cs">
       <DependentUpon>frmGarage.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmModifCell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModifCell.Designer.cs">
+      <DependentUpon>FrmModifCell.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmModifGarage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGarage.resx">
       <DependentUpon>frmGarage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModifCell.resx">
+      <DependentUpon>FrmModifCell.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmModifGarage.resx">
       <DependentUpon>FrmModifGarage.cs</DependentUpon>
