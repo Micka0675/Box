@@ -14,9 +14,11 @@ namespace Box
     {
         private Mbox leBox;
         private Mbox mbox;
-        public frmAjoutBox(Mbox leBox)
+        private frmBox frmBox1;
+        public frmAjoutBox(frmBox frmBox,Mbox leBox)
         {
            InitializeComponent();
+            this.frmBox1 = frmBox;
             this.leBox = leBox;
         }
 
@@ -31,7 +33,7 @@ namespace Box
             mbox = new Mbox();
             mbox = new Mbox(numBox, loyerMontant, chargesMontant);
             leBox.boxAdd(mbox);
-            leBox.afficheBox();
+            frmBox1.affiche();
             this.Close();
             
         }

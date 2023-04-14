@@ -43,7 +43,7 @@ namespace Box
 
         private void Ajouter_Click(object sender, EventArgs e)
         {
-            frmAjoutBox frmAjoutBox = new frmAjoutBox(this.leBox);
+            frmAjoutBox frmAjoutBox = new frmAjoutBox(this,this.leBox);
             frmAjoutBox.Show();
         }
 
